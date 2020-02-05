@@ -1,0 +1,26 @@
+body{
+font-size: 20px;
+font-family:Arial,Helvetica,Sans-serif;
+
+}
+input,textarea[type=text]{
+    height: 24px;
+}
+input[type=text]:valid,textarea:valid{
+background-color: aqua;
+
+}
+input[type=text]textarea:invalid{
+    background-color: red;
+}
+input[type=date]:invalid{
+    background-color: red;
+}
+input[type=date]:valid{
+    background-color:aqua;
+}
+input[type=submit],input[type=button]{
+    background-color: blue;
+    color: burlywood;
+    text-transform: uppercase;
+}
