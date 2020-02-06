@@ -6,10 +6,11 @@ body{
     background-size: 100% 100%;
     background-attachment: fixed;
 }
+
 .recuadro{
 width: 300px;
 box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
-background-color: rgba(168, 168, 168, 0.466);
+background-color: rgba(133, 133, 133, 0.671);
 padding: 20px;
 margin: 8% auto 0;
 text-align: center;
@@ -27,8 +28,8 @@ textarea{
 }
 input[type=submit], 
 input[type=button]{
-    background-color: rgb(39, 56, 87);
-    color: #FFF;
+    background-color: rgb(25, 0, 255);
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     height: 30px;
     width: auto;
@@ -36,8 +37,8 @@ input[type=button]{
 }
 input[type=submit]:hover, 
 input[type=button]:hover{
-    background-color: #FFF;
-    color: blue;
+    background-color:rgb(111, 0, 255);
+    color: rgb(0, 0, 0);
 }
 input[type=text]:valid, 
 textarea:valid,
@@ -51,5 +52,16 @@ input[type=date]:invalid{
 }
 label{
     font-style: unset;
-    color: thistle;
+    color: rgb(158, 200, 255);
+    font-size: 35px;
+    size: 100px;
+}
+.separador{
+    border-radius: 20px;
+    background-origin: padding-box;
+    border-color: royalblue;
+}
+.hr{
+    height:4px;
+    background-color: royalblue;
 }
