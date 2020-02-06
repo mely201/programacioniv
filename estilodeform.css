@@ -8,6 +8,7 @@ body{
 }
 
 .recuadro{
+    border-top: 5px solid rgb(111, 0, 255);
 width: 300px;
 box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
 background-color: rgba(133, 133, 133, 0.671);
@@ -16,12 +17,14 @@ margin: 8% auto 0;
 text-align: center;
 
 }
-
+:placeholder-shown{
+    color: white;
+}
 input, textarea{
+    
     height: 24px;
-    border: solid 2px rgb(158, 200, 255);
-    border-radius: 5px;
-    padding-left: 2px;
+    border-bottom: 5px solid darkblue;
+   
 }
 textarea{
     height: auto;
@@ -37,18 +40,20 @@ input[type=button]{
 }
 input[type=submit]:hover, 
 input[type=button]:hover{
+    
     background-color:rgb(111, 0, 255);
     color: rgb(0, 0, 0);
 }
 input[type=text]:valid, 
 textarea:valid,
 input[type=date]:valid{
+    
     background-color: rgb(156, 253, 177);
 }
 input[type=text]:invalid, 
 textarea:invalid,
 input[type=date]:invalid{
-    background-color: rgb(74, 137, 255);
+    background-color:rgb(126, 28, 255);
 }
 label{
     font-style: unset;
@@ -59,9 +64,10 @@ label{
 .separador{
     border-radius: 20px;
     background-origin: padding-box;
-    border-color: royalblue;
+    border-color: rgb(126, 28, 255);
 }
 .hr{
     height:4px;
-    background-color: royalblue;
+    background-color: rgb(126, 28, 255);
 }
+
