@@ -1,0 +1,100 @@
+
+
+body{
+  
+    background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.recuadro{
+    border-radius: 7px;
+    border-top: 5px solid rgb(111, 0, 255);
+width: 300px;
+box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+background-color: rgba(133, 133, 133, 0.671);
+padding: 20px;
+margin: 8% auto 0;
+text-align: center;
+
+}
+:placeholder-shown{
+    color: white;
+}
+input, textarea{
+    
+    height: 24px;
+    border-bottom: 5px solid darkblue;
+   
+}
+textarea{
+    height: auto;
+}
+input[type=submit], 
+input[type=button]{
+    background-color: rgb(25, 0, 255);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    height: 30px;
+    width: auto;
+    font-weight: bolder;
+}
+input[type=submit]:hover, 
+input[type=button]:hover{
+    
+    background-color:rgb(111, 0, 255);
+    color: rgb(0, 0, 0);
+}
+input[type=text]:valid, 
+textarea:valid,
+input[type=date]:valid{
+    
+    background-color: rgb(156, 253, 177);
+}
+input[type=text]:invalid, 
+textarea:invalid,
+input[type=date]:invalid{
+    background-color:rgb(126, 28, 255);
+}
+label{
+    font-style: unset;
+    color: rgb(158, 200, 255);
+    font-size: 35px;
+    size: 100px;
+}
+.separador{
+    border-radius: 4px;
+    background-origin: padding-box;
+    border-color: rgb(126, 28, 255);
+}
+.hr{
+    height:2px;
+    background-color: rgb(126, 28, 255);
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(111, 0, 255);
+}
+li{
+    float: left;
+}
+li a{
+display: block;
+color: white;
+text-align: center;
+padding: 10px 10px;
+text-decoration: none;
+
+
+}
+li a :hover{
+background-color: rgba(133, 133, 133, 0.671);
+
+}
+.ative{
+    background-color: royalblue;
+}
+
