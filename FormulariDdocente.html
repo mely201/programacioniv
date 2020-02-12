@@ -21,16 +21,17 @@
         <input required pattern="[A-Z](4)(0-9)](6)" type=text placeholder="codigo" id="txtcoddocente">
         </div>
         <div class="fila">
-            <input required  pattern="[A-ZañÑ](3-65)" type="text" placeholder="Nombre" id="txtnombredoc">
+            <input  required pattern="[A-Z]" maxlength="63" minlength="3" type="text" placeholder="Nombre" id="txtnombredoc">
         </div>
         <div class="fila">
             <input required type="text" placeholder="Direccion" id="txtdireccion" >
         </div>
         <div class="fila">
-            <input required pattern="[0-9](4)-[0-9](4)" type="text" placeholder="Telefono" id="txttelefono">
+            <input required maxlength="8" type="text" placeholder="Telefono" id="txttelefono">
         </div>
         <div class="fila">
             <input type="submit" value="Guardar" id="btnguardar" >
+            <input type="button" value="recuperar" id="btnrecuperar" >
         </div>
     </div>
    </form>
