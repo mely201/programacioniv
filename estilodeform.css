@@ -10,10 +10,10 @@ body{
 .recuadro{
     border-radius: 7px;
     border-top: 5px solid rgb(111, 0, 255);
-width: 300px;
-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+width: 350px;
+box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
 background-color: rgba(133, 133, 133, 0.671);
-padding: 20px;
+padding: 22px;
 margin: 8% auto 0;
 text-align: center;
 
@@ -79,22 +79,29 @@ ul{
     box-shadow: 0 0 10px rgb(111, 0, 255);
 }
 li{
+   
     float: left;
 }
 li a{
-display: block;
-color: white;
-text-align: center;
-padding: 10px 10px;
-text-decoration: none;
+  
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #7f28e2;
+    color: #fff;
 
 
 }
+
 li a :hover{
-background-color: rgba(133, 133, 133, 0.671);
+    background-color: #58b5d1;
+    margin-top: -2;
+    padding-bottom: 12px;
 
 }
 .ative{
-    background-color: royalblue;
+    background-color: rgb(126, 28, 255);
 }
 

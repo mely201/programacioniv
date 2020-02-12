@@ -85,7 +85,7 @@ ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    box-shadow: 0 0 10px rgb(25, 0, 255);
+    box-shadow: 0 0 20px rgb(25, 0, 255);
 }
 li{
 	float: left;
@@ -95,9 +95,11 @@ li a{
 display: block;
 color: black;
 text-align: center;
-
 padding: 10px 10px;
 text-decoration: none;
+background-color: rgb(31, 7, 59);
+color: white;
+
 
 
 }
