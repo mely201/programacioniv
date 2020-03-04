@@ -1,0 +1,12 @@
+body{
+    
+    background-size:100% 100% ;
+    background-attachment: fixed;
+}
+
+label{
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(111, 0, 255);
+    font-style: oblique;
+}
