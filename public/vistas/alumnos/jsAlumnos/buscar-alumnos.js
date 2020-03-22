@@ -5,8 +5,9 @@ export function modulo(){
         traerdatos(frmBuscarAlumnos.value);
 
     });
+
     let eliminarAlumno =(idAlumno)=>{
-        fetch(`/app_academica/Private/Modulos/Alumnos/procesos.php?proceso=eliminarAlumno&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
+        fetch(`/Private/Modulos/Alumnos/procesos.php?proceso=eliminarAlumno&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
             traerdatos('');
 
 
@@ -20,9 +21,10 @@ export function modulo(){
         $("#frm-alumno").value=alumno.direccion;
         $("#frm-alumno").value=alumno.telefono;
     }
+    
 
-    let traerdatos=(alumno)=>{
-        fetch(`/app_academica/Private/Modulos/Alumnos/procesos.php?proceso=buscarAlumno&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
+     traerdatos=(alumno)=>{
+        fetch(`/Private/Modulos/Alumnos/procesos.php?proceso=buscarAlumno&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
             let fila='';
             resp.forEach(alumno => {
                 filas+=`

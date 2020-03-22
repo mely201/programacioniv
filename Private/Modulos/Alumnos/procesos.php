@@ -1,5 +1,5 @@
 <?php 
-include('/app_academica/Private/config/config.php');
+include('../../config/config.php');
 $alumno = new alumno($conexion);
 
 $proceso = '';
