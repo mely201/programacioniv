@@ -21,7 +21,7 @@ export function modulo(){
             `;
         });
     });
-    frmAlumnos.addEventListener("reset",e=>{
+    frmDocentes.addEventListener("reset",e=>{
         $("#frm-docentes").dataset.accion = 'nuevo';
         $("#frm-docentes").dataset.iddocente = '';
     });

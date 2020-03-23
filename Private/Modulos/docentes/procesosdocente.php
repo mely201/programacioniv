@@ -7,9 +7,9 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
 $docente->$proceso( $_GET['docente'] );
-print_r(json_encode($alumno->respuesta));
+print_r(json_encode($docente->respuesta));
 
-class alumno{
+class docente{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
@@ -57,7 +57,7 @@ class alumno{
             }
         }
     }
-    public function buscarAlumno($valor=''){
+    public function buscarDocente($valor=''){
         $this->db->consultas('
             select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono
             from docentes

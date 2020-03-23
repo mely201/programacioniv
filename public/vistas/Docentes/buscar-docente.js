@@ -1,7 +1,7 @@
 export function modulo(){
     var $ = el => document.querySelector(el),
         frmBuscarDocente = $("#txtBuscarDocente");
-    frmBuscarAlumnos.addEventListener('keyup', e=>{
+    frmBuscarDocente.addEventListener('keyup', e=>{
         traerDatos(frmBuscarDocente.value);
     });
     let modificarDocente = (docente)=>{
@@ -12,17 +12,17 @@ export function modulo(){
         $("#txtDireccionDoncente").value = docente.direccion;
         $("#txtTelefonoDocente").value =   docente.telefono;
     };
-    let eliminarAlumno = (idAlumno)=>{
-        fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idAlumno}`).then(resp=>resp.json()).then(resp=>{
+    let eliminarDocente = (idDocente)=>{
+        fetch(` private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
             traerDatos('');
         });
     };
     let traerDatos = (valor)=>{
-        fetch(`private/Modulos/docentes/procesosdocente.php?proceso=buscarDocente&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
+        fetch(` private/Modulos/docentes/procesosdocente.php?proceso=buscarDocente&docente=${valor}`).then(resp=>resp.json()).then(resp=>{
             let filas = '';
             resp.forEach(docente => {
                 filas += `
-                    <tr data-iddocente='${docente.idDocente}' data-docente='${JSON.stringify(docente)}'>
+                    <tr data-iddocente='${docente.idDocente}' data-docentes='${JSON.stringify(docente)}'>
                         <td>${docente.codigo}</td>
                         <td>${docente.nombre}</td>
                         <td>${docente.direccion}</td>
@@ -35,7 +35,7 @@ export function modulo(){
             });
             $("#tbl-buscar-docentes > tbody").innerHTML = filas;
             $("#tbl-buscar-docentes > tbody").addEventListener("click",e=>{
-                if( e.srcElement.parentNode.dataset.alumno==null ){
+                if( e.srcElement.parentNode.dataset.docente==null ){
                     eliminarDocente( e.srcElement.parentNode.parentNode.dataset.iddocente );
                 } else {
                      modificarDocente( JSON.parse(e.srcElement.parentNode.dataset.docente) );

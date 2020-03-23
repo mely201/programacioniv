@@ -13,7 +13,7 @@ function init(){
                 
                 
             fetch(`public/vistas/${modulo}/${form}.html`).then( resp=>resp.text() ).then(resp=>{
-                console.log('formulario',form,'modulo ',modulo );
+                console.log('formulario',form,'modulo ',modulo,'resp ',resp );
                 $(`#vista-${form}`).innerHTML = resp;
                 
                 let btnCerrar = $(`#btn-close-${form}`);
