@@ -4,14 +4,16 @@ function init(){
        
     }
     let mostrarVista = $("[class*='mostrar']");
-    console.log( mostrarVista );
     mostrarVista.forEach(element => {
         element.addEventListener('click',e=>{
             e.stopPropagation();
 
             let modulo = e.srcElement.dataset.modulo,
                 form   = e.srcElement.dataset.form;
+                
+                
             fetch(`public/vistas/${modulo}/${form}.html`).then( resp=>resp.text() ).then(resp=>{
+                console.log('formulario',form,'modulo ',modulo );
                 $(`#vista-${form}`).innerHTML = resp;
                 
                 let btnCerrar = $(`#btn-close-${form}`);
