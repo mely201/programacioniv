@@ -1,6 +1,7 @@
 function init(){
     var $ = el => {
         return el.match(/^#/) ? document.querySelector(el) : document.querySelectorAll(el);
+       
     }
     let mostrarVista = $("[class*='mostrar']");
     console.log( mostrarVista );
@@ -21,7 +22,9 @@ function init(){
                     module.modulo();
                 });
                 init();
-            }); 
+
+            });
+            
         });
     });
 }
