@@ -22,13 +22,13 @@ class docente{
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el codigo del  Docente';
         }
         if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el nombre del  Docente';
         }
         if( empty($this->datos['direccion']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese la direccion del Docente';
         }
         $this->almacenar_docente();
     }
@@ -69,7 +69,7 @@ class docente{
         $this->db->consultas('
             delete docentes
             from docentes
-            where docentes.idDocente = "'.$idDocente.'"
+            where docentes.idDocente = "'.$idDoncente.'"
         ');
         $this->respuesta['msg'] = 'Registro eliminado correctamente';
     }

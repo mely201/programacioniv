@@ -5,6 +5,7 @@ export function modulo(){
     frmBuscarDocente.addEventListener('keyup', e=>{
         traerDatos(frmBuscarDocente.value);
     });
+  
     let modificarDocente = (docente)=>{
         $("#frm-docente").dataset.accion = 'modificar';
         $("#frm-docente").dataset.iddocente = docente.idDocente;
@@ -13,8 +14,12 @@ export function modulo(){
         $("#txtDireccionDoncente").value = docente.direccion;
         $("#txtTelefonoDocente").value =   docente.telefono;
     };
+    
+        
     let eliminarDocente = (idDocente)=>{
+        
         fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
+
             traerDatos('');
         });
     };
