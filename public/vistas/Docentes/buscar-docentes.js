@@ -1,5 +1,6 @@
 export function modulo(){
     var $ = el => document.querySelector(el),
+
         frmBuscarDocente = $("#txtBuscarDocente");
     frmBuscarDocente.addEventListener('keyup', e=>{
         traerDatos(frmBuscarDocente.value);
@@ -13,16 +14,16 @@ export function modulo(){
         $("#txtTelefonoDocente").value =   docente.telefono;
     };
     let eliminarDocente = (idDocente)=>{
-        fetch(` private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
+        fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
             traerDatos('');
         });
     };
     let traerDatos = (valor)=>{
-        fetch(` private/Modulos/docentes/procesosdocente.php?proceso=buscarDocente&docente=${valor}`).then(resp=>resp.json()).then(resp=>{
+        fetch(`private/Modulos/docentes/procesosdocente.php?proceso=buscarDocente&docente=${valor}`).then(resp=>resp.json()).then(resp=>{
             let filas = '';
             resp.forEach(docente => {
                 filas += `
-                    <tr data-iddocente='${docente.idDocente}' data-docente='${JSON.stringify(docente)}'>
+                    <tr data-iddocente='${docente.idDocente}' data-docentes='${JSON.stringify(docente)}'>
                         <td>${docente.codigo}</td>
                         <td>${docente.nombre}</td>
                         <td>${docente.direccion}</td>
