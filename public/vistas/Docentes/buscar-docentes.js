@@ -5,8 +5,8 @@ export function modulo(){
         traerDatos(frmBuscarDocente.value);
     });
     let modificarDocente = (docente)=>{
-        $("#frm-docentes").dataset.accion = 'modificar';
-        $("#frm-docentes").dataset.iddocente = docente.idDocente;
+        $("#frm-docente").dataset.accion = 'modificar';
+        $("#frm-docente").dataset.iddocente = docente.idDocente;
         $("#txtCodigoDocente").value = docente.codigo;
         $("#txtNombreDocente").value = docente.nombre;
         $("#txtDireccionDoncente").value = docente.direccion;
@@ -22,7 +22,7 @@ export function modulo(){
             let filas = '';
             resp.forEach(docente => {
                 filas += `
-                    <tr data-iddocente='${docente.idDocente}' data-docentes='${JSON.stringify(docente)}'>
+                    <tr data-iddocente='${docente.idDocente}' data-docente='${JSON.stringify(docente)}'>
                         <td>${docente.codigo}</td>
                         <td>${docente.nombre}</td>
                         <td>${docente.direccion}</td>
@@ -33,8 +33,8 @@ export function modulo(){
                     </tr>
                 `;
             });
-            $("#tbl-buscar-docentes > tbody").innerHTML = filas;
-            $("#tbl-buscar-docentes > tbody").addEventListener("click",e=>{
+            $("#tbl-buscar-docente > tbody").innerHTML = filas;
+            $("#tbl-buscar-docente > tbody").addEventListener("click",e=>{
                 if( e.srcElement.parentNode.dataset.docente==null ){
                     eliminarDocente( e.srcElement.parentNode.parentNode.dataset.iddocente );
                 } else {
