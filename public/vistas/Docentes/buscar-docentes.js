@@ -18,11 +18,13 @@ export function modulo(){
     
         
     let eliminarDocente = (idDocente)=>{
-        
-        fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
+        if(confirm('Estas seguro de eliminar este registro?')){
+            fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
 
-            traerDatos('');
-        });
+                traerDatos('');
+            });
+        }
+        
     };
     let traerDatos = (valor)=>{
         fetch(`private/Modulos/docentes/procesosdocente.php?proceso=buscarDocente&docente=${valor}`).then(resp=>resp.json()).then(resp=>{
@@ -43,8 +45,9 @@ export function modulo(){
             });
             $("#tbl-buscar-docente > tbody").innerHTML = filas;
             $("#tbl-buscar-docente > tbody").addEventListener("click",e=>{
-                if( e.srcElement.parentNode.dataset.docente==null ){
-                    eliminarDocente( e.srcElement.parentNode.parentNode.dataset.iddocente );
+                if( e.srcElement.parentNode.dataset.docente==null ){   
+                        eliminarDocente( e.srcElement.parentNode.parentNode.dataset.iddocente );
+                    
                 } else {
                      modificarDocente( JSON.parse(e.srcElement.parentNode.dataset.docente) );
                 }
