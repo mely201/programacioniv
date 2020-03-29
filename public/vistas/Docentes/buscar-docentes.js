@@ -13,6 +13,7 @@ export function modulo(){
         $("#txtNombreDocente").value = docente.nombre;
         $("#txtDireccionDoncente").value = docente.direccion;
         $("#txtTelefonoDocente").value =   docente.telefono;
+        $("#txtNitdocente").value =   docente.nit;
     };
     
         
@@ -33,6 +34,7 @@ export function modulo(){
                         <td>${docente.nombre}</td>
                         <td>${docente.direccion}</td>
                         <td>${docente.telefono}</td>
+                        <td>${docente.nit}</td>
                         <td>
                             <input type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

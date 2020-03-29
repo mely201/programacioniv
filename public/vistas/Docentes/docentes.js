@@ -11,7 +11,8 @@ export function modulo(){
             codigo    : $("#txtCodigoDocente").value,
             nombre    : $("#txtNombreDocente").value,
             direccion : $("#txtDireccionDocente").value,
-            telefono  : $("#txtTelefonoDocente").value
+            telefono  : $("#txtTelefonoDocente").value,
+            nit       : $("#txtNitDocente").value
         };
         fetch(`private/Modulos/docentes/procesosdocente.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
             $("#respuestaDocente").innerHTML = `

@@ -30,17 +30,19 @@ class docente{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del Docente';
         }
+       
         $this->almacenar_docente();
     }
     private function almacenar_docente(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO docentes (codigo,nombre,direccion,telefono) VALUES(
+                    INSERT INTO docentes (codigo,nombre,direccion,telefono,nit) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['direccion'] .'",
-                        "'. $this->datos['telefono'] .'"
+                        "'. $this->datos['telefono'] .'",
+                        "'. $this->datos['nit'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -50,7 +52,8 @@ class docente{
                         codigo     = "'. $this->datos['codigo'] .'",
                         nombre     = "'. $this->datos['nombre'] .'",
                         direccion  = "'. $this->datos['direccion'] .'",
-                        telefono   = "'. $this->datos['telefono'] .'"
+                        telefono   = "'. $this->datos['telefono'] .'",
+                         nit       = "'. $this->datos['nit'] .'",
                     WHERE idDocente = "'. $this->datos['idDocente'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -59,7 +62,7 @@ class docente{
     }
     public function buscarDocente($valor=''){
         $this->db->consultas('
-            select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono
+            select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.nit
             from docentes
             where docentes.codigo like "%'.$valor.'%" or docentes.nombre like "%'.$valor.'%"
         ');
