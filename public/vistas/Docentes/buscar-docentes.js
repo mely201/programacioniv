@@ -55,7 +55,6 @@ export function modulo(){
             $("#tbl-buscar-docente > tbody").innerHTML = filas;
             $("#tbl-buscar-docente > tbody").addEventListener("click",e=>{
                 if( e.srcElement.parentNode.dataset.docente==null ){        
-
                     eliminarDocente(e.srcElement.parentNode.parentNode.dataset.iddocente);      
                 } else {
                      modificarDocente( JSON.parse(e.srcElement.parentNode.dataset.docente) );

@@ -13,14 +13,13 @@ function init(){
                 
                 
             fetch(`public/vistas/${modulo}/${form}.html`).then( resp=>resp.text() ).then(resp=>{
-              
                 $(`#vista-${form}`).innerHTML  =resp;
                    let btnCerrar = $(`#btn-close-${form}`);
                 btnCerrar.addEventListener("click",event=>{
                     $(`#vista-${form}`).innerHTML = "";
                 });
                 import(`../vistas/${modulo}/${form}.js`).then(module=>{
-                    module.modulo();
+                    module.modulo(); 
                 });
                 init();
 
