@@ -64,17 +64,22 @@ class docente{
         $this->db->consultas('
             select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.nit
             from docentes
-            where docentes.codigo like "%'.$valor.'%" or docentes.nombre like "%'.$valor.'%"
+            where docentes.codigo like "%'.$valor.'%" or docentes.nombre like "%'.$valor.'%" or docentes.nit like "%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
     }
     public function eliminarDocente($idDoncente=''){
-        $this->db->consultas('
-            delete docentes
-            from docentes
-            where docentes.idDocente = "'.$idDoncente.'"
-        ');
-        $this->respuesta['msg'] = 'Registro eliminado correctamente';
+    
+            $this->db->consultas( '
+                delete docentes
+                from docentes
+                where docentes.idDocente = "'.$idDoncente.'"
+            ');
+           
+                $this->respuesta['msg'] = 'Registro eliminado correctamente';
+      
     }
+ 
+    
 }
 ?>

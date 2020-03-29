@@ -13,18 +13,27 @@ export function modulo(){
         $("#txtNombreDocente").value = docente.nombre;
         $("#txtDireccionDoncente").value = docente.direccion;
         $("#txtTelefonoDocente").value =   docente.telefono;
-        $("#txtNitdocente").value =   docente.nit;
+        $("#txtNitDocente").value =   docente.nit;
     };
     
         
     let eliminarDocente = (idDocente)=>{
-        if(confirm('Estas seguro de eliminar este registro?')){
-            fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
+        let dialog = document.getElementById("dialogDocentes");
+        dialog.close();
+        dialog.showModal();
 
+        document.getElementById("btnCancelarDocentes").addEventListener('click', event => {
+            dialog.close();
+        });
+
+        document.getElementById("btnConfirmarDocentes").addEventListener('click', event => {
+            fetch(`private/Modulos/docentes/procesosdocente.php?proceso=eliminarDocente&docente=${idDocente}`).then(resp=>resp.json()).then(resp=>{
                 traerDatos('');
             });
-        }
-        
+            dialog.close();
+        })
+           
+      
     };
     let traerDatos = (valor)=>{
         fetch(`private/Modulos/docentes/procesosdocente.php?proceso=buscarDocente&docente=${valor}`).then(resp=>resp.json()).then(resp=>{
@@ -38,16 +47,16 @@ export function modulo(){
                         <td>${docente.telefono}</td>
                         <td>${docente.nit}</td>
                         <td>
-                            <input type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input type="button" class="btn btn-outline-danger text-white" value="del" >
                         </td>
                     </tr>
                 `;
             });
             $("#tbl-buscar-docente > tbody").innerHTML = filas;
             $("#tbl-buscar-docente > tbody").addEventListener("click",e=>{
-                if( e.srcElement.parentNode.dataset.docente==null ){   
-                        eliminarDocente( e.srcElement.parentNode.parentNode.dataset.iddocente );
-                    
+                if( e.srcElement.parentNode.dataset.docente==null ){        
+
+                    eliminarDocente(e.srcElement.parentNode.parentNode.dataset.iddocente);      
                 } else {
                      modificarDocente( JSON.parse(e.srcElement.parentNode.dataset.docente) );
                 }
@@ -55,4 +64,7 @@ export function modulo(){
         });
     };
     traerDatos('');
+
 }
+ 
+
