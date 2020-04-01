@@ -53,7 +53,7 @@ class docente{
                         nombre     = "'. $this->datos['nombre'] .'",
                         direccion  = "'. $this->datos['direccion'] .'",
                         telefono   = "'. $this->datos['telefono'] .'",
-                         nit       = "'. $this->datos['nit'] .'",
+                         nit       = "'. $this->datos['nit'] .'"
                     WHERE idDocente = "'. $this->datos['idDocente'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
