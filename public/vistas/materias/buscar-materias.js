@@ -15,9 +15,12 @@ var appBuscarMateria = new Vue({
             appmateria.materia.accion = 'modificar';
         },
         eliminarMateria:function(idMateria){
-            fetch(`Private/Modulos/materias/procesoM.php?proceso=eliminarMateria&materia=${idMateria}`).then(resp=>resp.json()).then(resp=>{
-                this.buscarMateria();
-            });
+            if(confirm("Estas seguro de eliminar este registro?")){
+                fetch(`Private/Modulos/materias/procesoM.php?proceso=eliminarMateria&materia=${idMateria}`).then(resp=>resp.json()).then(resp=>{
+                    this.buscarMateria();
+                });
+            }
+           
         }
     },
     created:function(){

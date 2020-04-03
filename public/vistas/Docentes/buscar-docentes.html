@@ -32,13 +32,16 @@
                         <td>{{ profesor.telefono }}</td>
                         <td>{{ profesor.nit }}</td>
                         <td>
-                            <input v-on:click="eliminarDocente(profesor.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click=" eliminarDocente(profesor.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>
+                
             </table>
         </div>
     </div>
+   
 
 </form>
+
 <script src="public/vistas/Docentes/buscar-docentes.js"></script>
