@@ -1,0 +1,9 @@
+
+@media (max-width: 800px){
+.card-deck {
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+}

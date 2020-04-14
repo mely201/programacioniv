@@ -1,13 +1,4 @@
 
-.modulos{
-    position: absolute;
-}
-
-
-
-/* navbar */
-
-
 li a{
     display: block;
 }
@@ -28,3 +19,6 @@ li a:hover{
 .line{
     margin-right: 10px;
 }
+
+
+
