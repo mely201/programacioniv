@@ -6,13 +6,7 @@
 
 
 /* navbar */
-.divicio {
-    border-right: 1px solid #bbb;
-  }
-  
-  .divicio:last-child {
-    border-right: none;
-  }
+
 
 li a{
     display: block;
@@ -25,3 +19,12 @@ li a:hover{
     border-right: white;
 }
 
+.right{
+    display: inline;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.line{
+    margin-right: 10px;
+}
