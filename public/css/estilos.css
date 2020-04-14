@@ -2,3 +2,26 @@
 .modulos{
     position: absolute;
 }
+
+
+
+/* navbar */
+.divicio {
+    border-right: 1px solid #bbb;
+  }
+  
+  .divicio:last-child {
+    border-right: none;
+  }
+
+li a{
+    display: block;
+}
+li a:hover{
+    background-color: rgb(107, 107, 107);
+}
+
+.div{
+    border-right: white;
+}
+
