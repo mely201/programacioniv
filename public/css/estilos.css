@@ -3,7 +3,8 @@ li a{
     display: block;
 }
 li a:hover{
-    background-color: rgb(107, 107, 107);
+    background-color: rgb(161, 1, 253);
+    
 }
 
 .div{
@@ -18,6 +19,9 @@ li a:hover{
 
 .line{
     margin-right: 10px;
+}
+.contenedor{
+    background-color: blue;
 }
 
 
