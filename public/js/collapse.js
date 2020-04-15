@@ -7,18 +7,25 @@ $(document).ready(function () {
 
    
    $('#home').click(()=>{
+     
 	   $(".contenedor").load("public/vistas/inicio/inicio.html");
    
    });
    
    $('#verduras').click(()=>{
+      
 	   $(".contenedor").load("public/vistas/verduras/verduras.html");
    
    });
   
    $('#frutos').click(()=>{
+     
 	   $(".contenedor").load("public/vistas/frutos/frutos.html");
    
+   });
+   $('#login').click(()=> { 
+
+      $('.contenedor').load('public/vistas/login/login.html');
    });
   
 	  
@@ -28,7 +35,7 @@ $(document).ready(function () {
 
 });
 function toggle(){
-	$(".navbar-toggler").click(function(){
+	$("#toggles").click(function(){
 		console.log("click");
 		
         $(".collapse").animate({
