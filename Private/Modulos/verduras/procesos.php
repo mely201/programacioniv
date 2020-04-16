@@ -22,7 +22,7 @@ class alumno{
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese ';
         }
         if( empty($this->datos['nombre']) ){
             $this->respuesta['msg'] = 'por favor ingrese el nombre del estudiante';
@@ -30,9 +30,9 @@ class alumno{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
         }
-        $this->almacenar_alumno();
+        $this->almacenar_usuario();
     }
-    private function almacenar_alumno(){
+    private function almacenar_usuario(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
@@ -57,14 +57,7 @@ class alumno{
             }
         }
     }
-    public function buscarAlumno($valor=''){
-        $this->db->consultas('
-            select alumnos.idAlumno, alumnos.codigo, alumnos.nombre, alumnos.direccion, alumnos.telefono
-            from alumnos
-            where alumnos.codigo like "%'.$valor.'%" or alumnos.nombre like "%'.$valor.'%" or alumnos.telefono like "%'.$valor.'%"
-        ');
-        return $this->respuesta = $this->db->obtener_datos();
-    }
+   
     public function eliminarAlumno($idAlumno=''){
         $this->db->consultas('
             delete alumnos
