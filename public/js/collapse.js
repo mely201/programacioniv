@@ -2,32 +2,40 @@ $(document).ready(function () {
    toggle();
 
   
-   $(".contenedor").load("public/vistas/inicio/inicio.html")
+   $(".container").load("public/vistas/inicio/inicio.html")
 
 
    
    $('#home').click(()=>{
      
-	   $(".contenedor").load("public/vistas/inicio/inicio.html");
+	   $(".container").load("public/vistas/inicio/inicio.html");
    
    });
    
    $('#verduras').click(()=>{
       
-	   $(".contenedor").load("public/vistas/verduras/verduras.html");
+	   $(".container").load("public/vistas/verduras/verduras.html");
    
    });
   
    $('#frutos').click(()=>{
      
-	   $(".contenedor").load("public/vistas/frutos/frutos.html");
+	   $(".container").load("public/vistas/frutos/frutos.html");
    
    });
    $('#login').click(()=> { 
 
-      $('.contenedor').load('public/vistas/login/login.html');
+      $('.container').load('public/vistas/login/login.html');
    });
   
+
+   $('ul li a:first').addClass('active');
+
+   $('ul li a').click(function (e) { 
+      $('ul li a').removeClass('active');
+      $(this).addClass('active');
+      
+   });
 	  
 
 

@@ -1,7 +1,9 @@
-@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+.container{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .login-box{
-  margin-left: 30%;
-  margin-right: 80%;
   padding-bottom: 20px;
   background-color: #000000;
   border-radius: 8px;
@@ -58,4 +60,24 @@
   font-size: 18px;
   cursor: pointer;
   margin: 10px 0;
+}
+.stilo{
+  list-style-type: none;
+}
+.registro {
+  display: inline-block;
+  list-style-type: none;
+ color: #ffffff;
+}
+.registro:hover, .stilo:hover{
+  background-color: #000000;
+ color: blueviolet;
+}
+
+
+@media(min-width:600px){
+  .login-box{
+    padding: 20px;
+
+  }
 }
