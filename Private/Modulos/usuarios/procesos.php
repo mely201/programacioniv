@@ -24,9 +24,6 @@ class usuario{
         if( empty($this->datos['nombre']) ){
             $this->respuesta['msg'] = 'por favor ingrese su Nombre';
         }
-        if( empty($this->datos['apellido']) ){
-            $this->respuesta['msg'] = 'por favor ingrese su Apellido';
-        }
         if( empty($this->datos['correo']) ){
             $this->respuesta['msg'] = 'por favor ingrese el correo';
         }
@@ -41,22 +38,22 @@ class usuario{
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
                     INSERT INTO usuario (Nombre,Apellido,Correo,password,Direccion) VALUES(
-                        "'. $this->datos['Nombre'] .'",
-                        "'. $this->datos['Apellido'] .'",
-                        "'. $this->datos['Correo'] .'",
+                        "'. $this->datos['nombre'] .'",
+                        "'. $this->datos['apellido'] .'",
+                        "'. $this->datos['correo'] .'",
                         "'. $this->datos['password'] .'",
-                        "'. $this->datos['Direccion'] .'"
+                        "'. $this->datos['direccion'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                    UPDATE usuario SET
-                        Nombre  = "'. $this->datos['Nombre'] .'",
-                        Apellido  = "'. $this->datos['Apellido'] .'",
-                        Correo  = "'. $this->datos['Correo'] .'",
+                        Nombre  = "'. $this->datos['nombre'] .'",
+                        Apellido  = "'. $this->datos['apellido'] .'",
+                        Correo  = "'. $this->datos['correo'] .'",
                         password  = "'. $this->datos['password'] .'",
-                        Direccion  = "'. $this->datos['Direccion'] .'"
+                        Direccion  = "'. $this->datos['direccion'] .'"
                     WHERE idusuario = "'. $this->datos['idusuario'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';

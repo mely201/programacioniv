@@ -4,11 +4,11 @@ var app = new Vue({
 		usuario:{
 		idusuario :  0,
 		accion    : 'nuevo',
-		Nombre    : 'Nombre',
-		Apellido  : 'Apellido',
-		Correo    : 'Correo',
+		nombre    : 'Nombre',
+		apellido  : 'Apellido',
+		correo    : 'Correo',
 		password  : 'password',
-		Direccion : 'Direccion',
+		direccion : 'Direccion',
 		msg       : ''
 		}
 	},

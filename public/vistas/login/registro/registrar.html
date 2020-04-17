@@ -1,30 +1,30 @@
 <form v-on:submit.prevent="guardarregistro" method="POST" id="frm-registrar">
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
+	<link rel="stylesheet" href="public/vistas/login/login.css">
 	<div class="login-box container ml-5">
 	
 	<h1>REGISTRO</h1>
 	<div class="textbox">
 		<i class="fas fa-user"></i>
-		<input type="text" placeholder="Nombres" name="" value="">
+		<input type="text" v-model="usuario.nombre" placeholder="Nombres" name="" value="">
 	</div>	
 	<div class="textbox">
 		<i class="fas fa-user"></i>
-		<input type="text" placeholder="Apellidos" name="" value="">
+		<input type="text" v-model="usuario.apellido" placeholder="Apellidos" name="" value="">
 	</div>	
 	<div class="textbox">
 		<i class="fas fa-at"></i>
-		<input type="text" placeholder="Correo" name="" value="">
+		<input type="text" v-model="usuario.correo" placeholder="Correo" name="" value="">
 	</div>	
 
 	<div class="textbox">
 		<i class="fas fa-key"></i>
-		<input type="password" placeholder="password" name="" value="">
+		<input type="password" v-model="usuario.password" placeholder="password" name="" value="">
 	</div>
 	<div class="textbox">
 		<i class="far fa-address-card"></i>
-		<input type="text" placeholder="Direccion" name="" value="">
+		<input type="text" v-model="usuario.direccion"  placeholder="Direccion" name="" value="">
 	</div>
 		<div class="text-white">
 		<label for="">
@@ -39,7 +39,7 @@
 </div>
 	
 <div class=" alert alert-success" role="alert" id="app">
-	{{ message }}
+	{{ usuario.msg }}
 </div>
 	
 	<input class="btn" type="submit" name="" value="REGISTRO" id="guardarregistro">
