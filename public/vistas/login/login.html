@@ -1,9 +1,4 @@
 
- <form id="logear" action="" method="POST" class="container" >
-	 
-
-	
-
     <div class=" container bg-dark ">   
       
       <!-- inicio de sesion  -->
@@ -39,7 +34,7 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                      <a id="btn-login" href="#" class="btn btn-success">Iniciar Sesion  </a>
                                     </div>
                                 </div>
 
@@ -47,9 +42,9 @@
                                 <div class="form-group pb-2">
                                     <div class="col-md-12 control">
                                         <div class="text-white" style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                            Don't have an account! 
+                                            Aun No Tienes Una Cuenta! 
                                         <a class="text-white" href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                            Sign Up Here
+                                           Registrate aqui
                                         </a>
                                         </div>
                                     </div>
@@ -63,7 +58,7 @@
                 
         </div >
         <!-- registrarse -->
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 pt-2">
+        <div id="signupbox"" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 pt-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title text-white" >Sign Up</div>
@@ -76,11 +71,34 @@
                                     <p>Error:</p>
                                     <span></span>
                                 </div>
-                                    
-                                
                                   
+                                  <!-- campo nombre -->
                                 <div class="form-group">
-                                    <label for="email" class="col-md-3 control-label text-white">Email</label>
+                                  <label for="nombre" class="col-md-3 control-label text-white">Nombre</label>
+                                  <div class="col-md-12">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                    </div>
+                                  </div>  <!-- campo nombre -->
+
+                                  <!-- campo apellido -->
+                                  <div class="form-group">
+                                    <label for="apellido" class="col-md-3 control-label text-white">Apellido</label>
+                                    <div class="col-md-12">
+										<div class="input-group mb-3">
+											<div class="input-group-prepend">
+											  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+											</div>
+											<input type="text" class="form-control" placeholder="Apellido" aria-label="apellido" aria-describedby="basic-addon1">
+										  </div>
+                                    </div> <!-- campo apellido -->
+
+                                    <!-- correo -->
+                                <div class="form-group">
+                                    <label for="correo" class="col-md-3 control-label text-white">Correo</label>
                                     <div class="col-md-12">
 										<div class="input-group mb-3">
 											<div class="input-group-prepend ">
@@ -90,28 +108,9 @@
 										  </div>
                                     </div>
                                 </div>
-                                    
-                                <div class="form-group">
-                                    <label for="nombre" class="col-md-3 control-label text-white">Nombre</label>
-                                    <div class="col-md-12">
-										<div class="input-group mb-3">
-											<div class="input-group-prepend">
-											  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-											</div>
-											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
-										  </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="apellido" class="col-md-3 control-label text-white">Apellido</label>
-                                    <div class="col-md-12">
-										<div class="input-group mb-3">
-											<div class="input-group-prepend">
-											  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-											</div>
-											<input type="text" class="form-control" placeholder="Apellido" aria-label="apellido" aria-describedby="basic-addon1">
-										  </div>
-                                    </div>
+                                </div>   <!-- correo -->
+                                
+                                <!-- contraseña -->
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-md-3 control-label text-white">Password</label>
@@ -123,13 +122,25 @@
 											<input type="password" class="form-control" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
 										  </div>
                                     </div>
-                                </div>
+                                </div> <!-- contraseña -->
                                     
+                                <!-- direccion -->
+                                <div class="form-group">
+                                  <label for="direccion" class="col-md-3 control-label text-white">Direccion</label>
+                                
+                                <div class="input-group col-md-12">
+                                    
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-address-book"></i></i></span>
+                                  </div>
+                                  <textarea class="form-control" aria-label="with textarea" placeholder="Direccion"></textarea>
+                                </div>
+                              </div>    <!-- direccion -->
 
                                 <div class="form-group pb-3">
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                        <button id="btn-registrarte"  v-on:submit.prevent="registrarusuario" type="button" class="btn btn-info"><i class="fas fa-hand-point-right"></i>&nbsp Iniciar Sesion</button>
                                     </div>
                                 </div>
                
@@ -140,15 +151,12 @@
                             </form>
                          </div>
                     </div>
-
-               
-               
-                
+    
          </div> 
     </div>
     
     <script src="public/vistas/login/login.js"></script>
-</form>
+
 
 
 
