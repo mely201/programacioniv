@@ -1,4 +1,4 @@
-var registrarusuarios =new vue({
+var app =new vue({
 	el:'#signupbox',
 	data:{
 		usuario:{
@@ -14,9 +14,17 @@ var registrarusuarios =new vue({
 		}
 	},
 	method:{
-		registrarusuario(){
+		guardarusuario:function(){
+		console.log("clicksubmit");
+		
 			fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirDatos&usuario=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
-                this.usuario.msg = resp.msg;
+				this.usuario.msg = resp.msg;
+				this.usuario.idusuario=0;
+				this.usuario.nombre='';
+				this.usuario.apellido='';
+				this.usuario.correo='';
+				this.usuario.password='';
+				this.usuairo.direccion='';
             });
 		}
 	}
