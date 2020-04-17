@@ -2,6 +2,9 @@
 
 $(document).ready(function () {
    toggle();
+  $('#loginbox').show ();
+
+ 
 
   
    $(".container").load("public/vistas/inicio/inicio.html")
@@ -25,11 +28,6 @@ $(document).ready(function () {
 	   $(".container").load("public/vistas/frutos/frutos.html");
    
    });
-   $('#login').click(()=> { 
-
-      $('.container').load('public/vistas/login/login.html');
-   });
-  
 
    $('ul li a:first').addClass('active');
 
@@ -40,7 +38,7 @@ $(document).ready(function () {
    });
 	  
 
-
+   
 
 
 });
@@ -53,6 +51,7 @@ function toggle(){
 		  });
 	  });
 }
+
 
 
 
