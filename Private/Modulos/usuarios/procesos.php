@@ -6,8 +6,8 @@ $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
-$docente->$proceso( $_GET['usuario'] );
-print_r(json_encode($docente->respuesta));
+$usuario->$proceso( $_GET['usuario'] );
+print_r(json_encode($usuario->respuesta));
 
 class usuario{
     private $datos = array(), $db;
@@ -24,7 +24,7 @@ class usuario{
         if( empty($this->datos['nombre']) ){
             $this->respuesta['msg'] = 'por favor ingrese su Nombre';
         }
-        if( empty($this->datos['aplellido']) ){
+        if( empty($this->datos['apellido']) ){
             $this->respuesta['msg'] = 'por favor ingrese su Apellido';
         }
         if( empty($this->datos['correo']) ){
@@ -64,17 +64,17 @@ class usuario{
         }
     }
 
-    public function eliminarDocente($idDoncente=''){
+    // public function eliminarDocente($idDoncente=''){
     
-            $this->db->consultas( '
-                delete docentes
-                from docentes
-                where docentes.idDocente = "'.$idDoncente.'"
-            ');
+    //         $this->db->consultas( '
+    //             delete docentes
+    //             from docentes
+    //             where docentes.idDocente = "'.$idDoncente.'"
+    //         ');
            
-                $this->respuesta['msg'] = 'Registro eliminado correctamente';
+    //             $this->respuesta['msg'] = 'Registro eliminado correctamente';
       
-    }
+    // }
  
     
 }

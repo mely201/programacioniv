@@ -1,9 +1,9 @@
-var appregistro=new vue({
+var app = new Vue({
 	el:'#frm-registrar',
 	data:{
 		usuario:{
-		idusuario:0,
-		accion    : 'nuuevo',
+		idusuario :  0,
+		accion    : 'nuevo',
 		Nombre    : 'Nombre',
 		Apellido  : 'Apellido',
 		Correo    : 'Correo',
@@ -14,12 +14,10 @@ var appregistro=new vue({
 	},
 	methods:{
 		guardarregistro(){
-			fetch(`Private/Modulos/usuarios/procesos.php=recibirDatos&usuario=${JSON.stringify(this.usuario)}`).then(resp=>resp.json()).then(resp=>{this.usuario.msg=resp.msg});
+			fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirDatos&usuario=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
+                this.usuario.msg = resp.msg;
+            });
 		}
 	}
-
-}) 
-	
-	
-
+  })
 
