@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/estilos.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
     <title>APP ACADEMICA</title>
 </head>
@@ -59,7 +61,7 @@
 		</div>
 		<div class="modal-body">
   <!-- login -->
-       <div class="form-group " id="loginbox">
+       <div class="form-group " id="loginbox" v-on:>
                       <label for="correo" class="col-md-9 control-label text-white">Correo Electronico</label>
                       <div class="col-md-12">
                     <div class="input-group mb-3">
@@ -80,7 +82,7 @@
                       </div>
                    </div>
           <div class="modal-footer">
-            <a class="mr-auto" data-dismiss="#loginmodal"  data-toggle="modal" href="#registromodal">Registrate aqui</a>
+            <a class="mr-auto"  data-dismiss="#loginmodal"  data-toggle="modal" href="#registromodal">Registrate aqui</a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Iniciar Sesion</button>
           </div> <!--logi-->
@@ -97,7 +99,7 @@
             </div>
             <div class="modal-body"></div>
                   <!-- registro -->
-                  <div class="form-group " id="registrobox">
+                  <div class="form-group " id="registrobox" >
                     <!-- nombre -->
                     <div class="form-group">
                       <label for="nombre" class="col-md-9 control-label text-white">Nombre</label>
@@ -156,14 +158,13 @@
                            </div>  <!-- contra -->
 
                 <!-- footer -->
-            <div class="modal-footer">
-            <a class="mr-auto" data-dismiss="#registromodal"  data-toggle="modal" href="#loginmodal">Iniciar Sesion</a>
+            <div class="modal-footer" id="vues">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Iniciar Sesion</button>
+            <button type="button" class="btn btn-primary" v-on:click="iniciarsesion">Iniciar Sesion</button>
             </div>  <!-- registro -->
 
 
-
+           
             </div>
 
 
@@ -183,18 +184,22 @@
 
 
 
-    <!--js librerias-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
     
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
-    <script src="public/js/collapse.js"></script>
-    <script src="public/vistas/login/login.js"></script>
+
+       
 
     
 </form>
+  <!--js librerias-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+
+  <script src="public/js/jquery-ui.min.js"></script>
+    <script src="public/js/collapse.js"></script>
+    <script src="public/js/usuarios.js"></script>
 </body>
 </html>

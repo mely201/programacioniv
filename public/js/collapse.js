@@ -2,12 +2,8 @@
 
 $(document).ready(function () {
    toggle();
-  $('#loginbox').show ();
-
  
-
-  
-   $(".container").load("public/vistas/inicio/inicio.html")
+  $(".container").load("public/vistas/inicio/inicio.html");
 
 
    
