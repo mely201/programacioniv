@@ -1,11 +1,15 @@
 
-body{
-	background-color: blue;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+.footer{
+    display:flex;
+    flex-direction: column;
 }
+.flex{
+    display: flex;
+    justify-content: unsafe;
+    list-style-type: none;
+    text-decoration: none;
 
+}
 .card{
 	width: 100%;
     max-width: 700px;
@@ -16,4 +20,10 @@ body{
     transform: translate(-50%, -50%);
     padding-bottom: 50px;
     overflow: hidden;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
 }

@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
    toggle();
  
@@ -28,6 +27,16 @@ $(document).ready(function () {
    $('#frutos').click(()=>{
      
 	   $(".container").load("public/vistas/frutos/frutos.html");
+   
+   });
+   $('#login').click(()=>{
+     
+	   $(".container").load("public/vistas/login/login.html");
+   
+   });
+   $('#newusuario').click(()=>{
+     
+	   $(".container").load("public/vistas/usuario/nuevousurario.html");
    
    });
   
