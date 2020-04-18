@@ -1,17 +1,11 @@
 .container{
     margin: 0;
     padding: 0;
-    width: 90%;
+    width: 100%;
     border-radius: 6px;
 }
-li a{
-    display: block;
-  
-}
-li a:hover{
-    background-color: rgb(161, 1, 253);
-    
-}
+
+
 
 
 
@@ -25,17 +19,30 @@ li a:hover{
     margin-right: 10px;
 }
 
-.footerancla{
-    display: inline-block;
+
+
+
+.listasss {
+    display: flex;
+    justify-content:flex-end;
     list-style-type: none;
+    text-decoration: none;
+    background-color: rgba(161, 1, 253, 0);
+}
+.listasss:hover {
+    display: none;
+    display: flex;
+    justify-content:flex-end;
+    list-style-type: none;
+    text-decoration: none;
+    background-color: rgba(161, 1, 253, 0);
+}
+
+.ancla:hover{
     color: white;
     text-decoration: none;
 }
 
-.footerancla:hover{
-    display: block;
-    color: rgb(193, 0, 252);
-    text-decoration: none;
+.fondo:hover{
+    background-color: rgba(0, 0, 0, 0);
 }
-
-

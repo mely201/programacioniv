@@ -3,6 +3,12 @@
 $(document).ready(function () {
    toggle();
  
+  $('#inicioSesion').click(function (e) { 
+     e.preventDefault();
+     $('.modal-body').load('public/vistas/login/registroOlogin.html')
+     
+  });
+ 
   $(".container").load("public/vistas/inicio/inicio.html");
 
 
@@ -24,6 +30,12 @@ $(document).ready(function () {
 	   $(".container").load("public/vistas/frutos/frutos.html");
    
    });
+   $('#inicioSesion').click(()=>{  
+	   $(".container").load("public/vistas/usuario/login/login.php");
+   
+   });
+  
+  
 
    $('ul li a:first').addClass('active');
 
