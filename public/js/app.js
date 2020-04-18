@@ -30,10 +30,7 @@ $(document).ready(function () {
 	   $(".container").load("public/vistas/frutos/frutos.html");
    
    });
-   $('#inicioSesion').click(()=>{  
-	   $(".container").load("public/vistas/usuario/login/login.php");
-   
-   });
+  
   
   
 
