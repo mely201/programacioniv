@@ -2,16 +2,6 @@
 $(document).ready(function () {
    toggle();
  
-  $(".container").load("public/vistas/inicio/inicio.html");
-
-
-   
-   $('#home').click(()=>{
-     
-	   $(".container").load("public/vistas/inicio/inicio.html");
-   
-   });
-   
    $('#verduras').click(()=>{
       
 	   $(".container").load("public/vistas/verduras/verduras.html");
@@ -25,7 +15,7 @@ $(document).ready(function () {
    });
    $('#login').click(()=>{
      
-	   $(".container").load("public/vistas/login/login.html");
+	   $(".container").load("public/vistas/login/loginform.php");
    
    });
    $('#newusuario').click(()=>{

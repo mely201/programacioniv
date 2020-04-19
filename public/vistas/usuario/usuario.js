@@ -2,6 +2,8 @@
 var appusuario = new Vue({
     el:'#frm-usuarios',
     data:{
+      
+       
         usuario:{
             idUsuario 		 : 0,
             accion   		 : 'nuevo',
@@ -14,18 +16,39 @@ var appusuario = new Vue({
         }
     },
     methods:{
-        guardarusuario:function(){
+        guardarusuario:function( event){
+          
             fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirDatos&usuario=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
-                this.usuairo.msg = resp.msg;
-                this.usuairo.idUsuario = 0;
-         		 this.usuairo.nombreu  = '';
-                this.usuairo.nombrecooperativa = '';
-                this.usuairo.direccion = '';
-				this.usuairo.correo = '';
-				this.usuairo.passwords='';
-                this.alumno.accion = 'nuevo';
+                this.usuario.msg = resp.msg;
+                this.usuario.idUsuario = 0;
+         		 this.usuario.nombreu  = '';
+                this.usuario.nombrecooperativa = '';
+                this.usuario.direccion = '';
+				this.usuario.correo = '';
+				this.usuario.passwords='';
+                this.usuario.accion = 'nuevo';
               
             });
+           
         }
+        
     }
 });
+$('#cooperativa').hide();
+
+$(document).ready(function () {
+    
+
+
+$( '#inlineCheckbox1' ).on( 'click', function() {
+    if( $(this).is(':checked') ){
+        // Hacer algo si el checkbox ha sido seleccionado
+        $('#cooperativa').show();
+    } else {
+        // Hacer algo si el checkbox ha sido deseleccionado
+        $('#cooperativa').hide();
+    }
+});
+});
+   
+     

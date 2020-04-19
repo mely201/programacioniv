@@ -1,3 +1,9 @@
+<?php
+include('/Private/Modulos/usuarios/session.php');
+if(!isset($_SESSION['login_user'])){
+header("location: /../public/vistas/login/loginform.php"); // Redirecting To Home Page
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +20,7 @@
 
    
     
-    <title>APP ACADEMICA</title>
+    <title>Team Romal</title>
 </head>
 <body class="bg-secondary">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ui-btn-active  ui-state-persist" >
@@ -25,7 +31,7 @@
         <div class="collapse navbar-collapse " id="navbarNavAltMarkup ">
             <ul class="navbar-nav mr-auto ">
               <li class="nav-item">
-            <a class="nav-item nav-link active " id="home" href="#" >Home <span class="sr-only"></span></a>
+            <a class="nav-item nav-link active " id="home" href="index.php" >Home <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link " id="verduras" href="#">Verduras</a>
@@ -49,7 +55,7 @@
         </div>
       </nav>
       
-      <div class="container mt-2"></div>
+      <div class="container mt-2 mr-2 ml-2"></div>
     
 
   <!--js librerias-->
