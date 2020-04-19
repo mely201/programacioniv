@@ -1,7 +1,8 @@
 <?php
-include('/Private/Modulos/usuarios/session.php');
+include('Private/Modulos/usuarios/session.php');
+
 if(!isset($_SESSION['login_user'])){
-header("location: /../public/vistas/login/loginform.php"); // Redirecting To Home Page
+header("location:../../public/vistas/login/loginform.php"); // Redirecting To Home Page
 }
 ?>
 <!DOCTYPE html>

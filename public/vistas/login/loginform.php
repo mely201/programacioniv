@@ -1,5 +1,5 @@
 <?php
-include('/Private/Modulos/usuarios/login.php'); // Includes Login Script
+include('../../../Private/Modulos/usuarios/login.php'); // Includes Login Script
 if(isset($_SESSION['login_user'])){
 header("location: ../../../../../index.php"); // Redirecting To Profile Page
 }
