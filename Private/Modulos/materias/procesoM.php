@@ -1,6 +1,6 @@
 <?php 
 include('../../Config/Config.php');
-$usuario = new usuario($Conexion);
+$materia = new usuario($Conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){

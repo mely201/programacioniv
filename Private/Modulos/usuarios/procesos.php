@@ -21,14 +21,14 @@ class usuario{
         $this->validar_datos();
     }
     private function validar_datos(){
-        if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese su Nombre';
+        if( empty($this->datos['nombreu']) ){
+            $this->respuesta['msg'] = 'por favor ingrese su Nombre de usuairo';
         }
-        if( empty($this->datos['correo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el correo';
+        if( empty($this->datos['nombrecooperativa']) ){
+            $this->respuesta['msg'] = 'por favor ingrese el nombre de la cooperativa';
         }
-        if( empty($this->datos['password'])){
-            $this->respuesta['msg'] = 'por favor ingrese una contraseña ';
+        if( empty($this->datos['passwords'])){
+            $this->respuesta['msg'] = 'por favor ingrese una password ';
         }
        
         $this->almacenar_usuario();
@@ -37,23 +37,23 @@ class usuario{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO usuario (Nombre,Apellido,Correo,password,Direccion) VALUES(
-                        "'. $this->datos['nombre'] .'",
-                        "'. $this->datos['apellido'] .'",
+                    INSERT INTO usuario (nombreu,nombrecooperativa,direccion,correo,passwords) VALUES(
+                        "'. $this->datos['nombreu'] .'",
+                        "'. $this->datos['nombrecooperativa'] .'",
+                        "'. $this->datos['direccion'] .'",
                         "'. $this->datos['correo'] .'",
-                        "'. $this->datos['password'] .'",
-                        "'. $this->datos['direccion'] .'"
+                        "'. $this->datos['passwords'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
-                   UPDATE usuario SET
-                        Nombre  = "'. $this->datos['nombre'] .'",
-                        Apellido  = "'. $this->datos['apellido'] .'",
-                        Correo  = "'. $this->datos['correo'] .'",
-                        password  = "'. $this->datos['password'] .'",
-                        Direccion  = "'. $this->datos['direccion'] .'"
+                        UPDATE usuario SET
+                        nombreu  = "'. $this->datos['nombreu'] .'",
+                        nombrecooperativa  = "'. $this->datos['nombrecooperativa'] .'",
+                        direccion  = "'. $this->datos['direccion'] .'",
+                        correo  = "'. $this->datos['correo'] .'",
+                        passwords  = "'. $this->datos['passwords'] .'"
                     WHERE idusuario = "'. $this->datos['idusuario'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';

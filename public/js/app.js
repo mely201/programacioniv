@@ -2,12 +2,6 @@
 $(document).ready(function () {
    toggle();
  
-  $('#inicioSesion').click(function (e) { 
-     e.preventDefault();
-     $('.modal-body').load('public/vistas/login/registroOlogin.html')
-     
-  });
- 
   $(".container").load("public/vistas/inicio/inicio.html");
 
 
