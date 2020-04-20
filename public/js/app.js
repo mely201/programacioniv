@@ -2,6 +2,7 @@
 $(document).ready(function () {
    toggle();
  
+
    $('#verduras').click(()=>{
       
 	   $(".container").load("public/vistas/verduras/verduras.html");
@@ -15,7 +16,7 @@ $(document).ready(function () {
    });
    $('#login').click(()=>{
      
-	   $(".container").load("public/vistas/login/loginform.php");
+	   $(".container").load("public/vistas/login/productosuser.html");
    
    });
    $('#newusuario').click(()=>{

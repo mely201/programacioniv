@@ -34,21 +34,21 @@ var appusuario = new Vue({
         
     }
 });
-$('#cooperativa').hide();
+// $('#cooperativa').hide();
 
-$(document).ready(function () {
+// $(document).ready(function () {
     
 
 
-$( '#inlineCheckbox1' ).on( 'click', function() {
-    if( $(this).is(':checked') ){
-        // Hacer algo si el checkbox ha sido seleccionado
-        $('#cooperativa').show();
-    } else {
-        // Hacer algo si el checkbox ha sido deseleccionado
-        $('#cooperativa').hide();
-    }
-});
-});
+// $( '#inlineCheckbox1' ).on( 'click', function() {
+//     if( $(this).is(':checked') ){
+//         // Hacer algo si el checkbox ha sido seleccionado
+//         $('#cooperativa').show();
+//     } else {
+//         // Hacer algo si el checkbox ha sido deseleccionado
+//         $('#cooperativa').hide();
+//     }
+// });
+// });
    
      

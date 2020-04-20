@@ -1,9 +1,4 @@
-<?php
-include('../../../Private/Modulos/usuarios/login.php'); // Includes Login Script
-if(isset($_SESSION['login_user'])){
-header("location: ../../../../../index.php"); // Redirecting To Profile Page
-}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,23 +24,23 @@ header("location: ../../../../../index.php"); // Redirecting To Profile Page
 					<div class="input-group-prepend">
 					  <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope-square"></i></span>
 					</div>
-					<input type="email" class="form-control" id="correouser" placeholder="@ejemplo.com" aria-label="email" aria-describedby="basic-addon1">
+					<input type="email" class="form-control" id="username" placeholder="@ejemplo.com" aria-label="email" aria-describedby="basic-addon1">
 				</div>
 	
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 					  <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
 					</div>
-					<input type="password" class="form-control" id="passwordlogin" placeholder="*****" aria-label="password" aria-describedby="basic-addon1">
+					<input type="password" class="form-control" id="password" placeholder="*****" aria-label="password" aria-describedby="basic-addon1">
 				</div>
 						<div class=" footer">
 					<button class="btn btn-outline-primary">Iniciar Sesion</button>
-					<?php echo $error; ?>
+					
 					<a class="text-white flex pt-3" href="#">Ha olvidado su contraseña?</a>
 					</div>
 			</div>		
 		  </div>
-		 
+		 	
 			</form>
 	
 	

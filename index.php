@@ -1,10 +1,4 @@
-<?php
-include('Private/Modulos/usuarios/session.php');
 
-if(!isset($_SESSION['login_user'])){
-header("location:../../public/vistas/login/loginform.php"); // Redirecting To Home Page
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +40,7 @@ header("location:../../public/vistas/login/loginform.php"); // Redirecting To Ho
         </ul>
         <ul class="navbar-nav">
           <li class="line">
-            <a class="nav-link " id="login"  href="#"> Iniciar Sesion</a>
+            <a class="nav-link " id="login"  href="#"> Iniciar Sesion/publicar producto</a>
           <li class="line">
             
             <a class="nav-link" id="newusuario" href="#"> Registrarse</a>
@@ -56,7 +50,7 @@ header("location:../../public/vistas/login/loginform.php"); // Redirecting To Ho
         </div>
       </nav>
       
-      <div class="container mt-2 mr-2 ml-2"></div>
+      <div class="container mt-2  "></div>
     
 
   <!--js librerias-->
