@@ -38,7 +38,7 @@ class producto{
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
                     INSERT INTO producto (fk_idusuario,nombreprod,precio,descprod) VALUES(
-                        "'. $this->datos['usuario']['id'] .'",
+                        "'. $this->datos['fk_idusuario']['id'] .'",
                         "'. $this->datos['nombreprod'] .'",
                         "'. $this->datos['precio'] .'",
                         "'. $this->datos['descprod'] .'"
@@ -61,7 +61,7 @@ class producto{
 
     public function traer_usuario(){
         $this->$db->consultas('
-        SELECT usuario.idusuario AS ID FROM usuario
+        SELECT usuario.idusuario AS id FROM usuario
         ');
        return $this->respuesta=['usuario'=>$usuario];
     }

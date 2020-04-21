@@ -24,7 +24,6 @@ var appProduct = new Vue({
         guardarproducto:function( event){
           
             fetch(`private/Modulos/productos/proceso.php?proceso=recibirDatos&producto=${JSON.stringify(this.producto)}`).then( resp=>resp.json() ).then(resp=>{
-                this.producto.msg = resp.msg;
                 this.producto.idProducto = 0;
          		 this.producto.fk_idusuario  = '';
                 this.producto.nombreprod = '';
@@ -33,13 +32,14 @@ var appProduct = new Vue({
                 this.producto.descprod='';
                 this.producto.tipohortaliza='';
                 this.producto.accion = 'nuevo';
+                this.producto.msg = resp.msg;
               
             });
            
         },
         created(){
-            fetch(`/Private/Modulos/productos/proceso.php?proceso=traer_usuario&producto=''`).then(resp=>resp.json() ).then(resp=>{
-                this.usuario=resp.usuario;
+            fetch(`private/Modulos/productos/proceso.php?proceso=traer_usuario&producto=''`).then( resp=>resp.json() ).then(resp=>{
+               this.usuario=resp.usuario;
             });
         }
         
