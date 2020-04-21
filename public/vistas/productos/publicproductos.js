@@ -1,19 +1,24 @@
 
 var appProduct = new Vue({
-    el:'#frm-productos',
+    el:'#frm-producto',
     data:{
       
        
         producto:{
             idProducto 		 : 0,
             accion   		 : 'nuevo',
-           fk_idusuario   	 : 'autoincremental',
+           fk_idusuario   	 : '',
       	    nombreprod       : '',
           	 precio 		: '',
 			descprod 		: '',
 			tipohortaliza	:'',
             msg      		 : ''
-        }
+        },
+        usuario:{
+            idusuario: 0
+        },
+       
+        usuario:{}
     },
     methods:{
         guardarproducto:function( event){
@@ -31,6 +36,11 @@ var appProduct = new Vue({
               
             });
            
+        },
+        created(){
+            fetch(`/Private/Modulos/productos/proceso.php?proceso=traer_usuario&producto=''`).then(resp=>resp.json() ).then(resp=>{
+                this.usuario=resp.usuario;
+            });
         }
         
     }

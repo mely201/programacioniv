@@ -1,13 +1,13 @@
 <?php 
 include('../../Config/Config.php');
-$producto = new usuario($Conexion);
+$producto = new producto($Conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
 $producto->$proceso( $_GET['producto'] );
-print_r(json_encode($->respuesta));
+print_r(json_encode($producto->respuesta));
 
 class producto{
     private $datos = array(), $db;
@@ -31,33 +31,41 @@ class producto{
 		if( empty($this->datos['descprod']) ){
             $this->respuesta['msg'] = 'por favor ingrese la descprod de la producto';
         }
-        $this->almacenar_peoducto();
+        $this->almacenar_producto();
     }
-    private function almacenar_peoducto(){
+    private function almacenar_producto(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
                     INSERT INTO producto (fk_idusuario,nombreprod,precio,descprod) VALUES(
-                        "'. $this->datos['fk_idusuario'] .'",
+                        "'. $this->datos['usuario']['id'] .'",
                         "'. $this->datos['nombreprod'] .'",
                         "'. $this->datos['precio'] .'",
                         "'. $this->datos['descprod'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
-            } else if( $this->datos['accion']==='modificar' ){
-                $this->db->consultas('
-                   UPDATE producto SET
-                        fk_idusuario     = "'. $this->datos['fk_idusuario'] .'",
-                        nombreprod     = "'. $this->datos['nombreprod'] .'",
-                        precio  = "'. $this->datos['precio'] .'",
-                        descprod   = "'. $this->datos['descprod'] .'"
-                    WHERE idproducto = "'. $this->datos['idproducto'] .'"
-                ');
-                $this->respuesta['msg'] = 'Registro actualizado correctamente';
-            }
+             } //else if( $this->datos['accion']==='modificar' ){
+            //     $this->db->consultas('
+            //        UPDATE producto SET
+            //             fk_idusuario     = "'. $this->datos['fk_idusuario'] .'",
+            //             nombreprod     = "'. $this->datos['nombreprod'] .'",
+            //             precio  = "'. $this->datos['precio'] .'",
+            //             descprod   = "'. $this->datos['descprod'] .'"
+            //         WHERE idproducto = "'. $this->datos['idproducto'] .'"
+            //     ');
+            //     $this->respuesta['msg'] = 'Registro actualizado correctamente';
+            // }
         }
     }
+
+    public function traer_usuario(){
+        $this->$db->consultas('
+        SELECT usuario.idusuario AS ID FROM usuario
+        ');
+       return $this->respuesta=['usuario'=>$usuario];
+    }
+
     // public function buscarMateria($valor=''){
     //     $this->db->consultas('
     //         select producto.idMateria, producto.fk_idusuario, producto.nombreprod, producto.precio, producto.descprod

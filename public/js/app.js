@@ -16,7 +16,7 @@ $(document).ready(function () {
    });
    $('#login').click(()=>{
      
-	   $(".container").load("public/vistas/login/productosuser.html");
+	   $(".container").load("public/vistas/productos/productosuser.html");
    
    });
    $('#newusuario').click(()=>{
