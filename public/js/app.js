@@ -5,23 +5,35 @@ $(document).ready(function () {
 
    $('#verduras').click(()=>{
       
-	   $(".container").load("public/vistas/verduras/verduras.html");
+	   $(".container").load("public/vistas/verduras/verduras.html",function(data){
+         $(this).html(data);
+      });
    
    });
   
    $('#frutos').click(()=>{
-     
-	   $(".container").load("public/vistas/frutos/frutos.html");
+   
+	   $(".container").load("public/vistas/frutos/frutos.html",function(data){
+         $(this).html(data);
+      });
    
    });
    $('#login').click(()=>{
      
-	   $(".container").load("public/vistas/productos/productosuser.html");
-   
+      $('.container').load("public/vistas/login/login.html", function (data) {
+         $(this).html(data);
+         
+      });
    });
+   
    $('#newusuario').click(()=>{
      
-	   $(".container").load("public/vistas/usuario/nuevousurario.html");
+    $('.container').load("public/vistas/usuario/nuevousurario.html",function(data){
+       $(this).html(data);
+    });
+   });
+       
+   
    
    });
   
@@ -36,11 +48,6 @@ $(document).ready(function () {
       
    });
 	  
-
-   
-
-
-});
 function toggle(){
 	$("#toggles").click(function(){
 		console.log("click");
