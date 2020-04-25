@@ -39,6 +39,7 @@ class login{
                 $this->respuesta['msg'] = 'correo o contraseña incorrecto ';
             } else {
                 return $this->respuesta['msg'] = 'Bienvenido';
+                header('Location:../../../../../public/vistas/usuario/nuevousurario.html');
             }
         }
     }
