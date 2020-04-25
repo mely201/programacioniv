@@ -17,23 +17,7 @@ class login{
     {
         $this->db = $db;
     }
-    public function recibirDatos($login){
-        $this->datos = json_decode($login, true);
-        $this->validar_datos();
-       
-       }
 
-    private function validar_datos(){
-       
-        if( empty($this->datos['correo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el correo';
-        }
-		if( empty($this->datos['pass']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la pass';
-        }
-      
-        
-    }
     public function recibirUsuario($login)
     {
         $this->datos = json_decode($login, true);
