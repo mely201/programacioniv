@@ -4,13 +4,13 @@ var applogin = new Vue({
 		name:{
 			correo  	: '',
 			pass		:''
-		}
+		},
+		usuario:[]
 	},
 	methods:{
 		 inicioSesion:function(event){
-			fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirDatos&login=${JSON.stringify(this.name)}`).then( resp=>resp.json() ).then(resp=>{
-			  this.name.correo="";
-			  this.name.pass="";
+			fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirUsuario&login=${JSON.stringify(this.name)}`).then( resp=>resp.json() ).then(resp=>{
+			  
               this.name.msg=resp.msg;
             });
 		 }
