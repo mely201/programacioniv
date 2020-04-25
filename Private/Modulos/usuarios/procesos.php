@@ -22,6 +22,7 @@ class login{
     {
         $this->datos = json_decode($login, true);
         $this->validarUsuario();
+       
     }
     private function validarUsuario()
     {
@@ -39,8 +40,9 @@ class login{
                 $this->respuesta['msg'] = 'correo o contraseña incorrecto ';
             } else {
                 return $this->respuesta['msg'] = 'Bienvenido';
-                header('Location:../../../../../public/vistas/usuario/nuevousurario.html');
+                header('Location:../../../../public/vistas/usuario/nuevousurario.html');
             }
+           
         }
     }
 }

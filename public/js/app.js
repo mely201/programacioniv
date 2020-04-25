@@ -20,10 +20,10 @@ $(document).ready(function () {
    });
    $('#login').click(()=>{
      
-      $('.container').load("public/vistas/login/login.html", function (data) {
-         $(this).html(data);
+       $('.container').load("public/vistas/login/login.html", function (data) {
+          $(this).html(data);
          
-      });
+       });
    });
    
    $('#newusuario').click(()=>{
