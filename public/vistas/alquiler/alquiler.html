@@ -1,5 +1,5 @@
-<form v-on:submit.prevent="guardarAlquiler" v-on:reset="limpiaalquiler" id="frm-alquiler">
-    <div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
+<form v-on:submit.prevent="guardarAlquiler" v-on:reset="limpiarAlquiler" id="frm-alquiler">
+    <div class="card text-white bg-dark mb-3">
         <div class="card-header">
             ALQUILER PELICULAS
 
@@ -10,25 +10,30 @@
         <div class="card-body">
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
-                    <div class="col">
-                        Fecha Prestamo:
-                    </div>
-                    <div class="col">
+                   
+                    <div class="col-6 float-left">
+                        Fecha Prestamo
                         <input type="date" v-model="alquiler.fechap" class="form-control form-control-sm">
                     </div>
-                </div>
-            </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col">
-                    <div class="col">
-                        FECHA DEVOLUCION:
-                    </div>
-                    <div class="col">
+                    <div class="col-6 float-right">
+                        Fecha Devolucion
                         <input type="date" v-model="alquiler.fechaD" class="form-control form-control-sm">
                     </div>
+                   
                 </div>
             </div>
-
+           
+            <div class="row-col">
+               
+                <div class="col-6 float-left">
+                    Cliente
+                    <v-select class="bg-primary" v-model="alquiler.cliente":options="clientes" placeholder=" cliente" />
+                </div>
+                <div class="col-6 float-right">
+                    Pelicula
+                    <v-select class="bg-primary" v-model="alquiler.pelicula":options="peliculas" placeholder="pelicula" />
+                </div>
+            </div>
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
@@ -44,7 +49,7 @@
                     <div class="col">
                         <input id="btnGuardaalquilers" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
                         <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
-                        <input type="button" class="btn btn-outline-success mostrar-buscaralquilers text-white" data-modulo=alquilers" data-form="buscaralquilers" value="Buscar" >
+                        <input type="button" class="btn btn-outline-success mostrar-buscar-alquiler text-white" data-modulo="alquiler" data-form="buscar-alquiler" value="Buscar" >
                 </div>
             </div>
             <div class="row row-cols-1 p-2">
