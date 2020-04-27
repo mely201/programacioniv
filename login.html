@@ -1,6 +1,7 @@
-<form action=""  v-on:submit.prevent="inicioSesion" id="frm-login" method="post">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<form action=""  v-on:submit.prevent="inicioSesion"  id="frm-login" method="post">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	
 			<link rel="stylesheet" href="public/vistas/login/login.css">
 			
 
@@ -24,7 +25,9 @@
 			</div>
 				<div class="d-flex justify-content-center">
 					<input type="submit" id="iniciarsesions" class="btn btn-outline-primary" value="Inisiar Sesion">
+					
 				</div>
+				<div class="d-flex justify-content-star mt-3">   <a  class="text-white"  v-on:click="Recuperar" href="#">Restablecer Contraseña</a></div>
 				<div class="row pt-3">
 					<div class="col-12 text-center">
 						<div class="alert alert-success" role="alert"> 
@@ -33,8 +36,8 @@
 					</div>
 				</div>
 		</div>		
-		<div class="card-footer mt-3 ">
-			<p class="text-white">Aun no tienes una cuenta?<a class="text-white  ml-3"  href="#"> Registrate Aqui</a></p>
+		<div class="card-footer mt-3">
+			<p class="text-white">Aun no tienes una cuenta?<a v-on:click="Registrate"   class=" text-white  ml-3  "  href="#">Registrate aqui </a></p>
 			</div>
 			
 		</div>

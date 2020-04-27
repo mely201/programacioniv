@@ -5,7 +5,7 @@ $(document).ready(function () {
 
    $('#verduras').click(()=>{
       
-	   $(".container").load("public/vistas/verduras/verduras.html",function(data){
+	   $("#contenedor").load("public/vistas/verduras/verduras.html",function(data){
          $(this).html(data);
       });
    
@@ -13,22 +13,19 @@ $(document).ready(function () {
   
    $('#frutos').click(()=>{
    
-	   $(".container").load("public/vistas/frutos/frutos.html",function(data){
+	   $("#contenedor").load("public/vistas/frutos/frutos.html",function(data){
          $(this).html(data);
       });
    
    });
    $('#login').click(()=>{
      
-       $('.container').load("public/vistas/prelogin/preLogin.html", function (data) {
-          $(this).html(data);
-         
-       });
+      location.href='login.html';
    });
    
    $('#newusuario').click(()=>{
      
-    $('.container').load("public/vistas/usuario/nuevousurario.html",function(data){
+    $('#contenedor').load("public/vistas/usuario/nuevousurario.html",function(data){
        $(this).html(data);
     });
    });

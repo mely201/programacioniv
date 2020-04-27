@@ -45,5 +45,48 @@ class login{
            
         }
     }
+
+    public function recibirregistro($login)
+    {
+        $this->datos = json_decode($login, true);
+        $this->validarRegistro();
+       
+    }
+
+    private function validarRegistro()
+    {
+        if (empty($this->datos['correo']) || empty($this->datos['pass'])) {
+            $this->respuesta['msg'] = 'Correo o contraseña estan vacios';
+        } elseif(empty($this->datos['nombreu'])){
+            $this->respuesta['msg']='el campo nombre esta vacio ';
+        }elseif(empty($this->datos['telefono'])){
+            $this->respuesta['msg']='el campo telefono esta vacio';
+        }elseif (empty($this->datos['direccion'])) {
+            $this->respuesta['msg']='el campo direccion esta vacio';
+        }
+           $this->almacenar_registro();
+    }
+    private function almacenar_registro(){
+        if($this->respuesta['msg']==='correcto'){
+            if($this->datos['accion']==='nuevo'){
+                $this->db->consultas('
+                INSERT INTO usuario (nombreu,nombrecooperativa,direccion,telefono,tipoUsuario,correo,passwords) VALUES(
+                    "'. $this->datos['nombreu'] .'",
+                    "'. $this->datos['nombrecooperativa'] .'",
+                    "'. $this->datos['direccion'] .'",
+                    "'. $this->datos['telefono'] .'",
+                    "'. $this->datos['selected'] .'",
+                    "'. $this->datos['correo'] .'",
+                    "'. $this->datos['pass'] .'"
+                    )
+                ');
+                $this->respuesta['msg']="usuario registrado correctamente";
+
+                
+            }
+        }
+
+    }
+    
 }
 ?>

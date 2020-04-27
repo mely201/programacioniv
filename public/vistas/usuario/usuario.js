@@ -8,29 +8,38 @@ var appusuario = new Vue({
             idUsuario 		 : 0,
             accion   		 : 'nuevo',
             nombreu   		 : '',
-        nombrecooperativa   : '',
-            direccion 		: '',
-			correo  		: '',
-			passwords		:'',
+            selected         :'',
+        nombrecooperativa    : '',
+            telefono         :'',
+            direccion 		 : '',
+			correo  		 : '',
+			pass		     :'',
             msg      		 : ''
         }
     },
     methods:{
         guardarusuario:function( event){
           
-            fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirDatos&usuario=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
+            fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirRegistro&login=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
                 this.usuario.msg = resp.msg;
                 this.usuario.idUsuario = 0;
-         		 this.usuario.nombreu  = '';
+                  this.usuario.nombreu  = '';
+                  this.usuario.selected='';
                 this.usuario.nombrecooperativa = '';
+                this.usuario.telefono='';
                 this.usuario.direccion = '';
 				this.usuario.correo = '';
-				this.usuario.passwords='';
+				this.usuario.pass='';
                 this.usuario.accion = 'nuevo';
               
             });
+         
            
+        },
+        IniciarSesion:function(){
+            location.href="login.html";
         }
+       
         
     }
 });

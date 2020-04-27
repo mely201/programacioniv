@@ -23,7 +23,13 @@ var applogin = new Vue({
 				
 				
             });
-		 }
+		 },
+		 Registrate:function(){
+			location.href="Registro.html";
+		},
+		Recuperar:function(){
+			location.href="password.html";
+		}
 	}
 
 
