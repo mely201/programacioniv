@@ -33,7 +33,7 @@ class alquiler{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO alquiler (idcliente,idpelicula,fechaprestamo,fechadevoluion,valor) VALUES(
+                    INSERT INTO alquiler (idcliente,idpelicula,fechaprestamo,fechadevolucion,valor) VALUES(
                         "'. $this->datos['cliente']['id'] .'",
                         "'. $this->datos['pelicula']['id'] .'",
                         "'. $this->datos['fechaP'] .'",
@@ -46,7 +46,7 @@ class alquiler{
                 $this->db->consultas('
                     UPDATE alquiler SET
                         idcliente     = "'. $this->datos['cliente']['id'] .'",
-                        idpelicula      = "'. $this->datos['peliculas']['id'] .'",
+                        idpelicula      = "'. $this->datos['pelicula']['id'] .'",
                         fechaprestamo         = "'. $this->datos['fechaP'] .'",
                         fechadevolucion         = "'. $this->datos['fechaD'] .'",
                         valor         = "'. $this->datos['valor'] .'"
@@ -61,33 +61,29 @@ class alquiler{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-            select alquiler.idalquiler, alquiler.idcliente, alquiler.idpelicula, 
-                alquiler.fechaprestamo, alquiler.fechadevolucion, 
-                peliculas.descripcion, peliculas.sinopsis, 
-                cliente.nombre,alquiler.valor
-            from alquiler
-                inner join peliculas on(peliculas.idpelicula=alquiler.idpelicula)
-                inner join cliente on(cliente.idcliente=alquiler.idcliente)
-            where peliculas.descripcion like "%'. $valor .'%" or 
+        SELECT alquiler.idalquiler,alquiler.idcliente,alquiler.idpelicula,alquiler.fechaprestamo,alquiler.fechadevolucion,peliculas.descripcion,cliente.nombre,alquiler.valor from alquiler JOIN peliculas ON(peliculas.idpelicula=alquiler.idpelicula) JOIN cliente ON(cliente.idcliente=alquiler.idcliente)
+            WHERE peliculas.descripcion like "%'. $valor .'%" or 
                 cliente.nombre like "%'. $valor .'%" or 
                 alquiler.fechaprestamo like "%'. $valor .'%" or
                 alquiler.fechadevolucion like "%'.$valor.'%"
         ');
-        $alquiler = $this->respuesta = $this->db->obtener_data();
+        $alquiler = $this->respuesta = $this->db->obtener_datos();
         foreach ($alquiler as $key => $value) {
             $datos[] = [
                 'idalquiler' => $value['idalquiler'],
-                'peliculas'      => [
-                    'id'      => $value['idpelicula'],
-                    'label'   => $value['desc']
-                ],
                 'cliente'      => [
                     'id'      => $value['idcliente'],
                     'label'   => $value['nombre']
                 ],
-                'fechaP'       => $value['fP'],
-                'fP'           => $value['fechaP'],
-                'fechaD'        =>$value['fechaD']
+                'pelicula'      => [
+                    'id'      => $value['idpelicula'],
+                    'label'   => $value['descripcion']
+                ],
+                
+                'fechaP'       => $value['fechaprestamo'],
+                'fechaD'        =>$value['fechadevolucion'],
+                'valor'         =>$value['valor']
+
 
 
             ]; 

@@ -10,11 +10,11 @@ var appalquiler = new Vue({
                 idCliente : 0,
                 nombre   : ''
             },
-            pelicula    : {
+            peliculas    : {
                 idPelicula : 0,
                 descripcion   : ''
             },
-            fechaP     : '',
+            fechaP    : '',
             fechD      :'',
             msg       : ''
         },

@@ -13,7 +13,7 @@
                    
                     <div class="col-6 float-left">
                         Fecha Prestamo
-                        <input type="date" v-model="alquiler.fechap" class="form-control form-control-sm">
+                        <input type="date" v-model="alquiler.fechaP" class="form-control form-control-sm">
                     </div>
                     <div class="col-6 float-right">
                         Fecha Devolucion
@@ -27,7 +27,7 @@
                
                 <div class="col-6 float-left">
                     Cliente
-                    <v-select class="bg-primary" v-model="alquiler.cliente":options="clientes" placeholder=" cliente" />
+                    <v-select class="bg-primary" v-model="alquiler.cliente":options="clientes" placeholder="cliente" />
                 </div>
                 <div class="col-6 float-right">
                     Pelicula
@@ -47,7 +47,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col text-center">
                     <div class="col">
-                        <input id="btnGuardaalquilers" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
+                        <input id="btnGuardaalquiler" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
                         <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
                         <input type="button" class="btn btn-outline-success mostrar-buscar-alquiler text-white" data-modulo="alquiler" data-form="buscar-alquiler" value="Buscar" >
                 </div>

@@ -1,38 +1,38 @@
-<form method="POST" id="frm-buscar-docentes">
-    <div class="card text-white bg-dark mb-3" style="max-width: 48rem;">
+<form method="POST" id="frm-buscar-alquiler">
+    <div class="card text-white bg-dark mb-3">
         <div class="car-header">
-            BUSQUEDA DOCENTES
+            BUSQUEDA ALQUILER
 
-            <button type="button" id="btn-close-buscar-docentes" class="close" aria-label="Close">
+            <button type="button" id="btn-close-buscar-alquiler" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="card-body">
-            <table id="tbl-buscar-docente" class="table-striped table-dark table-bordered table-hover">
+            <table id="tbl-buscar-alquiler" class="table-striped table-dark table-bordered table-hover">
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarDocente"  placeholder="codigo, nombre o nit" class="form-control">
+                            <input type="text" v-model="valor" v-on:keyup="buscarAlquiler"  placeholder="cliente,pelicula" class="form-control">
                         </th>
                     </tr>
                     <tr>
-                        <th>CODIGO</th>
-                        <th>NOMBRE</th>
-                        <th>DIRECCION</th>
-                        <th>TELEFONO</th>
-                        <th>NIT</th>
+                        <th>CLIENTE</th>
+                        <th>DESCRIPCION</th>
+                        <th>FECHA PRESTAMO</th>
+                        <th>FECHA DEVOLUCION</th>
+                        <th>VALOR</th>
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="profesor in misdocentes" :key="profesor.idDocente" v-on:click="modificarDocente(profesor)">
-                        <td>{{ profesor.codigo }}</td>
-                        <td>{{ profesor.nombre }}</td>
-                        <td>{{ profesor.direccion }}</td>
-                        <td>{{ profesor.telefono }}</td>
-                        <td>{{ profesor.nit }}</td>
+                    <tr v-for="renta in misalquiler" :key="renta.idAlquiler" v-on:click="modificarAlquiler(renta)">
+                        <td>{{ renta.cliente }}</td>
+                        <td>{{ renta.desc }}</td>
+                        <td>{{ renta.fechaP }}</td>
+                        <td>{{ renta.fechaD }}</td>
+                        <td>{{ renta.valor }}</td>
                         <td>
-                            <input v-on:click=" eliminarDocente(profesor.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click=" eliminarAlquiler(renta.idAlquiler)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>
@@ -44,4 +44,4 @@
 
 </form>
 
-<script src="public/vistas/Docentes/buscar-docentes.js"></script>
+<script src="public/vistas/alquiler/buscar-alquiler.js"></script>
