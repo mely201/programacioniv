@@ -4,7 +4,7 @@ var apppelicula = new Vue({
         pelicula:{
             idpelicula  : 0,
             accion      : 'nuevo',
-            desc        : '',
+            descripcion        : '',
             sinopsis    : '',
             genero      : '',
             duracion    : '',
@@ -15,14 +15,17 @@ var apppelicula = new Vue({
         guardarpelicula:function(){
             fetch(`Private/Modulos/pelicula/procesos.php?proceso=recibirDatos&pelicula=${JSON.stringify(this.pelicula)}`).then( resp=>resp.json() ).then(resp=>{
                 this.pelicula.msg = resp.msg;
-                this.pelicula.idpelicula = 0;
-                this.pelicula.desc = '';
-                this.pelicula.sinopsis = '';
-                this.pelicula.genero = '';
-                this.pelicula.duracion = '';
-                this.pelicula.accion = 'nuevo';
+            
                 
             });
+        },
+        limpiarpelicula(){
+            this.pelicula.idpelicula = 0;
+            this.pelicula.descripcion = '';
+            this.pelicula.sinopsis = '';
+            this.pelicula.genero = '';
+            this.pelicula.duracion = '';
+            this.pelicula.accion = 'nuevo';
         }
     }
 });

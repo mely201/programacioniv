@@ -24,13 +24,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="usuario in miscliente" :key="usuario.idCliente" v-on:click="modificarCliente(usuario)">
+                    <tr v-for="usuario in miscliente" :key="usuario.idcliente" v-on:click="modificarCliente(usuario)">
                         <td>{{ usuario.nombre }}</td>
                         <td>{{ usuario.direccion }}</td>
                         <td>{{ usuario.telefono }}</td>
                         <td>{{ usuario.dui }}</td>
                         <td>
-                            <input v-on:click="eliminarCliente(usuario.idCliente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click="eliminarCliente(usuario.idcliente)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>

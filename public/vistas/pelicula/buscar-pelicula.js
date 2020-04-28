@@ -13,6 +13,8 @@ var appBuscarpelicula = new Vue({
         modificarpelicula:function(pelicula){
             apppelicula.pelicula = pelicula;
             apppelicula.pelicula.accion = 'modificar';
+            
+            
         },
         eliminarpelicula:function(idpelicula){
             if(confirm("Estas seguro de eliminar este registro?")){

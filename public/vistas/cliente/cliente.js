@@ -3,7 +3,7 @@ var appcliente = new Vue({
     el:'#frm-cliente',
     data:{
         cliente:{
-            idCliente  : 0,
+            idcliente  : 0,
             accion    : 'nuevo',
             nombre    : '',
             direccion : '',
@@ -16,14 +16,17 @@ var appcliente = new Vue({
         guardarcliente:function(){
             fetch(`private/Modulos/cliente/procesos.php?proceso=recibirDatos&cliente=${JSON.stringify(this.cliente)}`).then( resp=>resp.json() ).then(resp=>{
                 this.cliente.msg = resp.msg;
-                this.cliente.idCliente = 0;
+                
+              
+            });
+        },
+        limpiarcliente(){
+            this.cliente.idcliente = 0;
                 this.cliente.nombre = '';
                 this.cliente.direccion = '';
 				this.cliente.telefono = '';
 				this.cliente.dui='';
                 this.cliente.accion = 'nuevo';
-              
-            });
         }
     }
 });

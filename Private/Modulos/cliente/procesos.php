@@ -50,11 +50,11 @@ class cliente{
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                    UPDATE cliente SET
-                        nombre     = "'. $this->datos['nombre'] .'",
-                        dierccion     = "'. $this->datos['direccion'] .'",
-                        telefono  = "'. $this->datos['telefono'] .'",
-                        dui   = "'. $this->datos['dui'] .'"
-                    WHERE idCliente = "'. $this->datos['idCliente'] .'"
+                        nombre        = "'. $this->datos['nombre'] .'",
+                        direccion     = "'. $this->datos['direccion'] .'",
+                        telefono      = "'. $this->datos['telefono'] .'",
+                        dui           = "'. $this->datos['dui'] .'"
+                    WHERE idcliente = "'. $this->datos['idcliente'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
@@ -62,17 +62,17 @@ class cliente{
     }
     public function buscarCliente($valor=''){
         $this->db->consultas('
-            select cliente.idCliente, cliente.nombre, cliente.direccion, cliente.telefono, cliente.dui
-            from cliente
-            where cliente.nombre like "%'.$valor.'%" or cliente.telefono like "%'.$valor.'%" or cliente.dui like "%'.$valor.'%"
+            SELECT cliente.idcliente, cliente.nombre, cliente.direccion, cliente.telefono, cliente.dui
+            FROM cliente
+            WHERE cliente.nombre like "%'.$valor.'%" or cliente.telefono like "%'.$valor.'%" or cliente.dui like "%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
     }
-    public function eliminarcliente($idCliente=''){
+    public function eliminarcliente($idcliente=''){
         $this->db->consultas('
             delete cliente
             from cliente
-            where cliente.idCliente = "'.$idCliente.'"
+            where cliente.idcliente = "'.$idcliente.'"
         ');
         $this->respuesta['msg'] = 'Registro eliminado correctamente';
     }

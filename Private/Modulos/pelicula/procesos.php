@@ -21,7 +21,7 @@ class pelicula{
         $this->validar_datos();
     }
     private function validar_datos(){
-        if( empty($this->datos['desc']) ){
+        if( empty($this->datos['descripcion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la descripcion de la pelicula';
         }
         if( empty($this->datos['sinopsis']) ){
@@ -40,7 +40,7 @@ class pelicula{
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
                     INSERT INTO peliculas (descripcion,sinopsis,genero,duracion) VALUES(
-                        "'. $this->datos['desc'] .'",
+                        "'. $this->datos['descripcion'] .'",
                         "'. $this->datos['sinopsis'] .'",
                         "'. $this->datos['genero'] .'",
                         "'. $this->datos['duracion'] .'"
@@ -50,11 +50,11 @@ class pelicula{
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                    UPDATE peliculas SET
-                        descripcion     = "'. $this->datos['desc'] .'",
-                        sinopsis     = "'. $this->datos['sinopsis'] .'",
-                        genero  = "'. $this->datos['genero'] .'",
-                        duracion   = "'. $this->datos['duracion'] .'"
-                    WHERE idpelicula = "'. $this->datos['idpelicula'] .'"
+                        descripcion      = "'. $this->datos['descripcion'] .'",
+                        sinopsis         = "'. $this->datos['sinopsis'] .'",
+                        genero           = "'. $this->datos['genero'] .'",
+                        duracion         = "'. $this->datos['duracion'] .'"
+                    WHERE idpelicula     = "'. $this->datos['idpelicula'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
