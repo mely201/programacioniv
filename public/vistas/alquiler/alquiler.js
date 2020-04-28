@@ -26,8 +26,7 @@ var appalquiler = new Vue({
             fetch(`private/Modulos/alquiler/procesos.php?proceso=recibirDatos&alquiler=${JSON.stringify(this.alquiler)}`).then( resp=>resp.json() ).then(resp=>{
                 this.alquiler.fechaP='';
                 this.alquiler.fechaD='';
-                this.alquiler.clientes='';
-                this.alquiler.peliculas='';
+               
                 this.alquiler.msg = resp.msg;
             });
         },
@@ -37,6 +36,8 @@ var appalquiler = new Vue({
             this.alquiler.alquiler='';
             this.alquiler.cliente='';
             this.alquiler.peliculas='';
+            this.alquiler.fechaP='';
+            this.alquiler.fechaD='';
             this.alquiler.msg="";
         }
     },

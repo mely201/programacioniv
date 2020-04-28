@@ -8,6 +8,7 @@ var appBuscarAlquiler = new Vue({
         buscarAlquiler:function(){
             fetch(`private/Modulos/alquiler/procesos.php?proceso=buscaralquiler&alquiler=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                 this.misalquiler = resp;
+               
                 
             });
         },

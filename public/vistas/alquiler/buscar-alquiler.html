@@ -26,8 +26,8 @@
                 </thead>
                 <tbody>
                     <tr v-for="alquileres in misalquiler" :key="alquileres.idalquiler" v-on:click="modificarAlquiler(alquileres)">
-                        <td>{{ alquileres.cliente }}</td>
-                        <td>{{ alquileres.peliculas }}</td>
+                        <td>{{ alquileres.cliente.label }}</td>
+                        <td>{{ alquileres.peliculas.label }}</td>
                         <td>{{ alquileres.fechaP }}</td>
                         <td>{{ alquileres.fechaD }}</td>
                         <td>{{ alquileres.valor }}</td>
