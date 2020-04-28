@@ -15,9 +15,9 @@ var appBuscarAlquiler = new Vue({
             appalquiler.alquiler = alquiler;
             appalquiler.alquiler.accion = 'modificar';
         },
-        eliminarALquiler:function(idalquiler){
+        eliminarAlquiler:function(idalquiler){
             if (confirm("Estas seguro de eliminar este registro?")){
-                fetch(`Private/Modulos/alquiler/procesos.php?proceso=eliminaralquiler&alquiler=${idAlquiler}`).then(resp=>resp.json()).then(resp=>{
+                fetch(`Private/Modulos/alquiler/procesos.php?proceso=eliminaralquiler&alquiler=${idalquiler}`).then(resp=>resp.json()).then(resp=>{
                     this.buscarAlquiler();
                 });
             }

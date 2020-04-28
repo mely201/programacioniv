@@ -6,7 +6,7 @@ var appalquiler = new Vue({
         alquiler:{
             idAlquiler : 0,
             accion    : 'nuevo',
-            cliente   : {
+            clientes   : {
                 idCliente : 0,
                 nombre   : ''
             },
@@ -18,25 +18,32 @@ var appalquiler = new Vue({
             fechD      :'',
             msg       : ''
         },
-        clientes : {},
-        peliculas  : {}
+        cliente : {},
+        pelicula  : {}
     },
     methods:{
         guardarAlquiler(){
             fetch(`private/Modulos/alquiler/procesos.php?proceso=recibirDatos&alquiler=${JSON.stringify(this.alquiler)}`).then( resp=>resp.json() ).then(resp=>{
+                this.alquiler.fechaP='';
+                this.alquiler.fechaD='';
+                this.alquiler.clientes='';
+                this.alquiler.peliculas='';
                 this.alquiler.msg = resp.msg;
             });
         },
         limpiarAlquiler(){
-            this.alquiler.idAlquiler=0;
+            this.alquiler.idalquiler=0;
             this.alquiler.accion="nuevo";
+            this.alquiler.alquiler='';
+            this.alquiler.cliente='';
+            this.alquiler.peliculas='';
             this.alquiler.msg="";
         }
     },
     created(){
         fetch(`private/Modulos/alquiler/procesos.php?proceso=traer_cliente_pelicula&alquiler=''`).then( resp=>resp.json() ).then(resp=>{
-            this.clientes = resp.clientes;
-            this.peliculas = resp.peliculas;
+            this.cliente = resp.clientes;
+            this.pelicula = resp.peliculas;
         });
     }
 });

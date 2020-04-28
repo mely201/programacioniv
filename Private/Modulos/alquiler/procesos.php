@@ -45,12 +45,12 @@ class alquiler{
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE alquiler SET
-                        idcliente     = "'. $this->datos['cliente']['id'] .'",
-                        idpelicula      = "'. $this->datos['pelicula']['id'] .'",
-                        fechaprestamo         = "'. $this->datos['fechaP'] .'",
-                        fechadevolucion         = "'. $this->datos['fechaD'] .'",
-                        valor         = "'. $this->datos['valor'] .'"
-                    WHERE idalquiler = "'. $this->datos['idalquiler'] .'"
+                        idcliente              = "'. $this->datos['cliente']['id'] .'",
+                        idpelicula             = "'. $this->datos['pelicula']['id'] .'",
+                        fechaprestamo          = "'. $this->datos['fechaP'] .'",
+                        fechadevolucion        = "'. $this->datos['fechaD'] .'",
+                        valor                  = "'. $this->datos['valor'] .'"
+                    WHERE idalquiler           = "'. $this->datos['idalquiler'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
@@ -61,11 +61,11 @@ class alquiler{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-        SELECT alquiler.idalquiler,alquiler.idcliente,alquiler.idpelicula,alquiler.fechaprestamo,alquiler.fechadevolucion,peliculas.descripcion,cliente.nombre,alquiler.valor from alquiler JOIN peliculas ON(peliculas.idpelicula=alquiler.idpelicula) JOIN cliente ON(cliente.idcliente=alquiler.idcliente)
+        SELECT alquiler.idalquiler,alquiler.idcliente,alquiler.idpelicula,
+        alquiler.fechaprestamo,alquiler.fechadevolucion,peliculas.descripcion,cliente.nombre,alquiler.valor from alquiler JOIN peliculas ON(peliculas.idpelicula=alquiler.idpelicula) JOIN cliente ON(cliente.idcliente=alquiler.idcliente)
             WHERE peliculas.descripcion like "%'. $valor .'%" or 
                 cliente.nombre like "%'. $valor .'%" or 
-                alquiler.fechaprestamo like "%'. $valor .'%" or
-                alquiler.fechadevolucion like "%'.$valor.'%"
+                alquiler.valor like "%'. $valor .'%" 
         ');
         $alquiler = $this->respuesta = $this->db->obtener_datos();
         foreach ($alquiler as $key => $value) {
@@ -75,16 +75,13 @@ class alquiler{
                     'id'      => $value['idcliente'],
                     'label'   => $value['nombre']
                 ],
-                'pelicula'      => [
+                'peliculas'    => [
                     'id'      => $value['idpelicula'],
                     'label'   => $value['descripcion']
                 ],
-                
-                'fechaP'       => $value['fechaprestamo'],
-                'fechaD'        =>$value['fechadevolucion'],
+                'fechaP'        => $value['fechaprestamo'],
+                'fechaD'        => $value['fechadevolucion'],
                 'valor'         =>$value['valor']
-
-
 
             ]; 
         }
@@ -109,7 +106,7 @@ class alquiler{
             FROM alquiler
             WHERE alquiler.idalquiler="'.$idalquiler.'"
         ');
-        return $this->respuesta['msg'] = 'Registro eliminado correctamente';;
+        return $this->respuesta['msg'] = 'Registro eliminado correctamente';
     }
 }
 ?>

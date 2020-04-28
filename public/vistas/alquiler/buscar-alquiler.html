@@ -12,12 +12,12 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarAlquiler"  placeholder="cliente,pelicula" class="form-control">
+                            <input type="text" v-model="valor" v-on:keyup="buscarAlquiler"  placeholder="cliente,pelicula y valor" class="form-control">
                         </th>
                     </tr>
                     <tr>
                         <th>CLIENTE</th>
-                        <th>DESCRIPCION</th>
+                        <th>PELICULA</th>
                         <th>FECHA PRESTAMO</th>
                         <th>FECHA DEVOLUCION</th>
                         <th>VALOR</th>
@@ -25,14 +25,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="renta in misalquiler" :key="renta.idAlquiler" v-on:click="modificarAlquiler(renta)">
-                        <td>{{ renta.cliente }}</td>
-                        <td>{{ renta.desc }}</td>
-                        <td>{{ renta.fechaP }}</td>
-                        <td>{{ renta.fechaD }}</td>
-                        <td>{{ renta.valor }}</td>
+                    <tr v-for="alquileres in misalquiler" :key="alquileres.idalquiler" v-on:click="modificarAlquiler(alquileres)">
+                        <td>{{ alquileres.cliente }}</td>
+                        <td>{{ alquileres.peliculas }}</td>
+                        <td>{{ alquileres.fechaP }}</td>
+                        <td>{{ alquileres.fechaD }}</td>
+                        <td>{{ alquileres.valor }}</td>
                         <td>
-                            <input v-on:click=" eliminarAlquiler(renta.idAlquiler)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click=" eliminarAlquiler(alquileres.idalquiler)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>
