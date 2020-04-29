@@ -19,8 +19,12 @@ var appusuario = new Vue({
     },
     methods:{
         guardarusuario:function( event){
+
           
             fetch(`private/Modulos/usuarios/procesos.php?proceso=recibirRegistro&login=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
+                if(resp.msg=='usuario registrado correctamente'){
+                    location.href="cooperativa.html"
+                }else{
                 this.usuario.msg = resp.msg;
                 this.usuario.idUsuario = 0;
                   this.usuario.nombreu  = '';
@@ -31,6 +35,7 @@ var appusuario = new Vue({
 				this.usuario.correo = '';
 				this.usuario.pass='';
                 this.usuario.accion = 'nuevo';
+            }
               
             });
          
@@ -43,21 +48,6 @@ var appusuario = new Vue({
         
     }
 });
-// $('#cooperativa').hide();
 
-// $(document).ready(function () {
-    
-
-
-// $( '#inlineCheckbox1' ).on( 'click', function() {
-//     if( $(this).is(':checked') ){
-//         // Hacer algo si el checkbox ha sido seleccionado
-//         $('#cooperativa').show();
-//     } else {
-//         // Hacer algo si el checkbox ha sido deseleccionado
-//         $('#cooperativa').hide();
-//     }
-// });
-// });
    
      
