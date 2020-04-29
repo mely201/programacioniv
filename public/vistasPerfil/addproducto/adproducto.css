@@ -1,0 +1,24 @@
+
+
+h1.h1s{
+	display: flex;
+	justify-content: center;
+	color: blanchedalmond;
+}
+hr.hrs{
+	background-color: blanchedalmond;
+}
+label{
+	color: blanchedalmond;
+}
+
+div.tiempo  {
+	display: flex;
+	justify-content: center;
+}
+
+div.botones{
+	display: flex;
+	justify-content: center;
+	
+}

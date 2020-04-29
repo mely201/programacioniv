@@ -6,46 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="public/vistas/perfiles/perfil.css">
+	<link rel="stylesheet" href="public/vistas/perfiles/cooperativa.css">
     <title>APP ACADEMICA</title>
 </head>
 <body class="bg-secondary">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a class="navbar-brand text-white" href="#">LOGO</a>
-
+    <ul class="navbar-nav ml-auto ulc">
+      <li class="line">
+        <a class="nav-link  text-white" id="perfil"  href="#"> Perfil</a>
+      </li>
+    </ul>
  
   </nav>
 
 
 <!-- Top navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav navbar-center">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">informacion del perfil <span class="sr-only">(current)</span></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ui-btn-active  ui-state-persist" >
+  <div class="container-fluid">
+    <button class="navbar-toggler "id="togglesss" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup ">
+        <ul class="navbar-nav mr-auto " id="nav">
+          <li class="nav-item">
+        <a class="nav-item nav-link active " id="info" href="#" >Informacion de Perfil <span class="sr-only"></span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">añadir producto a venta <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link " id="addProductos" href="#">Añadir producto en venta</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">lista de deseos <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" id="listdeseos"  href="#">Lista de deseos</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">producto en oferta <span class="sr-only">(current)</span></a>
+      <li class="divicio">
+        <a class="nav-link " id="POferta" href="#">Producto en oferta</a>
       </li>
     </ul>
+  
+     
+    </div>
   </div>
-  </nav>  
+  </nav>
 
+  <section class="mt-1" id="contenedorP">
 
+    </section>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="public/js/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
  
+  <script src="public/vistas/perfiles/cooperativa.js"></script>
+   <script src="https://unpkg.com/vue-select@3.0.0"></script> 
 
 </body>
 </html>
