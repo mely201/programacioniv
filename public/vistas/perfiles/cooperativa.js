@@ -9,7 +9,7 @@ $(document).ready(function () {
 	});
 
 	$('#addProductos').click(()=>{
-		console.log('sdf');
+		
 		
 		$("#contenedorP").load("public/vistasPerfil/addproducto/addproducto.html",function(data){
 		  $(this).html(data);
