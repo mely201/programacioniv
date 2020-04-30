@@ -1,9 +1,28 @@
 
  
-.ulc :hover{
-	display: block;
-	background-color: blueviolet;
+
+.navbars{
+	background: #5fb677;
 }
+
+ul.uls li.lis a.text{
+    color: black;
+   
+}
+
+
+ul.uls.activa li.activa a.text.activa:hover{
+   border-top:3px solid teal;
+   transition: border 0.4s;
+}
+li.lis a.text{
+    margin: 1px;
+}
+
+.active{
+    border-top:3px solid teal;
+}
+ 
   
   /* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
   @media screen and (max-width: 600px) {

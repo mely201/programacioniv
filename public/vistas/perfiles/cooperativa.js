@@ -32,6 +32,23 @@ $(document).ready(function () {
 	   });
 	
 	});
+	$('#Configc').click(()=>{
+		console.log('sdf');
+		
+		$("#contenedorP").load("public/vistasPerfil/configCuenta/configcuenta.html",function(data){
+		  $(this).html(data);
+	   });
+	
+	});
+
+
+	$('ul.activa li.activa a.activa:first').addClass('active');
+
+   $('ul.activa li.activa a.activa').click(function (e) { 
+      $('ul.activa li.activa a.activa').removeClass('active');
+      $(this).addClass('active');
+      
+   });
 });
 
 

@@ -3,22 +3,21 @@ body{
 	padding-top:1px ;
 }
 
+
 .wrapper{
 	display: flex;
-	position: relative;
-
 }
 .wrapper .sidebar {
-	position: fixed;
+	position: absolute;
 	width: 250px;
 	height: 100%;
-	background-color: blueviolet;
-	color: #ffffff;
-	padding: 1px 0;
+	background-color: #82D19B;
+	color: #000000	;
+	padding: 1px 0; 
 	
 }
 .sidebar{
-	outline: 1px solid #2a2a2a;
+	outline: .5px solid #d4d4d4;
 }
 
 
@@ -32,7 +31,9 @@ body{
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	
 }
+
 .sidebar .sideli{
 	
 	transition: border 0.3s;
@@ -41,11 +42,11 @@ body{
 
 .sidebar .sideli:hover{
 	
-	border-left: 5px solid #eeeeee;
+	border-left: 5px solid #00a8a8;
 }
 .sidebar .sidea{
 	display: block;
-	color: #fff;
+	color: #000000;
 	text-decoration: none;
 	padding: 10px;
 }

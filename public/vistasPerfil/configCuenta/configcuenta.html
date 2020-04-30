@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body>
+	<div class="container">
+	<form>
+		<div class="row d-flex justify-content-center">
+			<div class="col-6">
+				<div class="card float-left" style="width: 18rem;">
+					<img class="card-img-top" src="public/img/imgpeque.jpg" alt="Card image cap">
+				  </div>
+				  <div class="float-right">
+					<button type="button" class="btn btn-secondary btn-lg float-left mt-5" data-toggle="modal" data-target="#foto">Editar Foto de Perfil</button>
+				</div>
+			</div>
+			<div class="col-8 mt-3">
+				
+				<div class="form-group float-left">
+					<label for="nombre">Nombre de Usuario</label>
+					<input type="text" class="form-control" id="nombre">					
+				  </div>
+
+				  <div class="form-group float-right">
+					<label for="nombre">Nombre Cooperativa</label>
+					<input type="text" class="form-control" id="nombre">					
+				  </div>
+			</div>
+				
+				<div class="col-8 mt-3">
+					<div class="form-group ">
+						<label for="exampleInputEmail1">Correo ELectronico</label>
+						<input type="email" class="form-control" id="correoU">
+						
+					  </div>
+				</div>
+				<div class="col-8">
+					<label for="exampleInputEmail1">Telefono</label>
+					<div class="input-group ">
+						<input type="text" class="form-control" >
+						<div class="input-group-append ">
+						  <button class="btn btn-outline-secondary " type="button"  data-toggle="modal" data-target="#editelefono">Editar Telefono</button>
+						</div>
+					  </div>
+				</div>  
+				<div class="col-8 mb-3">
+					<label for="contra">Contraseña</label>
+					<div class="input-group ">
+						<input type="password" class="form-control" >
+						<div class="input-group-append ">
+						  <button class="btn btn-outline-secondary " type="button"  data-toggle="modal" data-target="#edicontra">Editar Contraseña</button>
+						</div>
+					  </div>
+				</div>  
+				</div>
+				
+
+		</div>
+	  </form>
+	  </div>
+	  <script src="public/js/jquery-3.5.js"></script>
+	  <script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
+
+
+
+<!-- Modal1 -->
+<div class="modal fade" id="foto" tabindex="-1" role="dialog" aria-labelledby="foto" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="foto">Foto de Perfil</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body ">
+			<div class="container d-flex justify-content-center">
+				<div class="card float-left" style="width: 18rem;">
+					<img class="card-img-top" src="public/img/perfil.png" alt="Card image cap">
+				  </div>	 
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-lg">Eliminar</button>
+			<button type="button" class="btn btn-secondary btn-lg">Subir foto</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+
+  <!-- Modal2 -->
+<div class="modal fade" id="editelefono" tabindex="-1" role="dialog" aria-labelledby="editelefono" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="editelefono">Edicion de telefono</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <button type="button" class="btn btn-primary">Guardar Cambios</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+
+  <!-- Modal3 -->
+<div class="modal fade" id="edicontra" tabindex="-1" role="dialog" aria-labelledby="edicontraLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="edicontraLabel">Cambio de Contraseña</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<div class="container">
+				<p><b> <h6> Requisitos</h6></b>
+					Contiene entre 8 y 36 caracteres
+					Contener al menos 1 letra en mayúsculas y minúsculas
+					Contiene al menos 1 número
+					No será lo mismo que Nombre de pantalla</p>
+			</div>
+			<div class="form-group ">
+				<label for="contraA">Contraseña Antigua</label>
+				<input type="password" class="form-control" id="contraA">					
+			  </div>
+			  <div class="form-group ">
+				<label for="contraN">Nueva Contraseña</label>
+				<input type="password" class="form-control" id="contraN">					
+			  </div>
+			  <div class="form-group ">
+				<label for="confir"> Confirmar Contraseña</label>
+				<input type="password" class="form-control" id="confirm">					
+			  </div>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <button type="button" class="btn btn-primary">Guardar Cambios</button>
+		</div>
+	  </div>
+	</div>
+  </div>

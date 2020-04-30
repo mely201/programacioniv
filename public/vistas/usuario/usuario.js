@@ -13,7 +13,8 @@ var appusuario = new Vue({
             telefono         :'',
             direccion 		 : '',
 			correo  		 : '',
-			pass		     :'',
+            pass		     :'',
+            fecha            :'',
             msg      		 : ''
         }
     },
@@ -33,7 +34,8 @@ var appusuario = new Vue({
                 this.usuario.telefono='';
                 this.usuario.direccion = '';
 				this.usuario.correo = '';
-				this.usuario.pass='';
+                this.usuario.pass='';
+                this.usuario.fecha='';
                 this.usuario.accion = 'nuevo';
             }
               

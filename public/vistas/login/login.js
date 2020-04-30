@@ -15,6 +15,7 @@ var applogin = new Vue({
 				if(resp.msg=="Bienvenido"){
 					location.href='cooperativa.html';
 				}else{
+					
 					this.name.correo='';
 					this.name.pass='';
 					this.name.msg=resp.msg;

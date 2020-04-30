@@ -70,14 +70,15 @@ class login{
         if($this->respuesta['msg']==='correcto'){
             if($this->datos['accion']==='nuevo'){
                 $this->db->consultas('
-                INSERT INTO usuario (nombreu,nombrecooperativa,direccion,telefono,tipoUsuario,correo,passwords) VALUES(
+                INSERT INTO usuario (nombreu,nombrecooperativa,direccion,telefono,tipoUsuario,correo,passwords,fechaR) VALUES(
                     "'. $this->datos['nombreu'] .'",
                     "'. $this->datos['nombrecooperativa'] .'",
                     "'. $this->datos['direccion'] .'",
                     "'. $this->datos['telefono'] .'",
                     "'. $this->datos['selected'] .'",
                     "'. $this->datos['correo'] .'",
-                    "'. $this->datos['pass'] .'"
+                    "'. $this->datos['pass'] .'",
+                    "'. $this->datos['fecha'] .'"
                     )
                 ');
                 $this->respuesta['msg']="usuario registrado correctamente";
