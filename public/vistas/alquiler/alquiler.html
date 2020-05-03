@@ -13,11 +13,11 @@
                    
                     <div class="col-6 float-left">
                         Fecha Prestamo
-                        <input type="date" v-model="alquiler.fechaP" class="form-control form-control-sm">
+                        <input type="date" required v-model="alquiler.fechaP" class="form-control form-control-sm">
                     </div>
                     <div class="col-6 float-right">
                         Fecha Devolucion
-                        <input type="date" v-model="alquiler.fechaD" class="form-control form-control-sm">
+                        <input type="date" required v-model="alquiler.fechaD" class="form-control form-control-sm">
                     </div>
                    
                 </div>
@@ -40,7 +40,7 @@
                         VALOR:
                     </div>
                     <div class="col">
-                        <input type="text" v-model="alquiler.valor" class="form-control form-control-sm">
+                        <input type="text" required v-model="alquiler.valor" class="form-control form-control-sm">
                     </div>
                 </div>
             </div>

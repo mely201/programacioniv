@@ -12,7 +12,7 @@
                     DESCRIPCION
                 </div>
                 <div class="col-12">
-                    <input type="text" v-model="pelicula.descripcion" placeholder="AAAA000000" class="form-control">
+                    <input type="text" required pattern="[a-zA-ZñÑ]{0,200}" v-model="pelicula.descripcion" placeholder="AAAA000000" class="form-control">
                 </div>
             </div>
             
@@ -21,7 +21,7 @@
                     SINOPSIS
                 </div>
                 <div class="col-12">
-                    <input type="text" v-model="pelicula.sinopsis" placeholder="AAA AAA" class="form-control">
+                    <input type="text" required pattern="[a-zA-ZñÑ]{0,200}" v-model="pelicula.sinopsis" placeholder="AAA AAA" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -29,7 +29,7 @@
                     GENERO
                 </div>
                 <div class="col-12">
-                    <input type="text" v-model="pelicula.genero" placeholder="AAA" class="form-control">
+                    <input type="text" required pattern="[a-zA-ZñÑ]{0,100}" v-model="pelicula.genero" placeholder="AAA" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -37,7 +37,7 @@
                     DURACION
                 </div>
                 <div class="col-12">
-                    <input type="text" v-model="pelicula.duracion" placeholder="00:00" class="form-control">
+                    <input type="text" required v-model="pelicula.duracion" placeholder="00:00" class="form-control">
                 </div>
             </div>
         

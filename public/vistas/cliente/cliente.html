@@ -12,7 +12,7 @@
                     NOMBRE
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="cliente.nombre" placeholder="AAA AAA" class="form-control">
+                    <input type="text" required pattern="[a-zA-ZñÑ]{3,25}" v-model="cliente.nombre" placeholder="AAA AAA" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -20,7 +20,7 @@
                     DIRECCION
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="cliente.direccion" placeholder="AAA" class="form-control">
+                    <input type="text" required pattern="[a-zA-ZñÑ]{0,100}" v-model="cliente.direccion" placeholder="AAA" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -28,7 +28,7 @@
                     TEL
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="cliente.telefono" placeholder="0000-0000" class="form-control">
+                    <input type="text" required pattern="[0-9]{4}-[0-9]{4}" v-model="cliente.telefono" placeholder="0000-0000" class="form-control">
                 </div>
 			</div>
 			<div class="row p-2">
@@ -36,7 +36,7 @@
                     DUI
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="cliente.dui" placeholder="0000000-0" class="form-control">
+                    <input type="text" required pattern="[0-9]{8}-[0-9]{1}" v-model="cliente.dui" placeholder="0000000-0" class="form-control">
                 </div>
             </div>
           
